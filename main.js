@@ -42,14 +42,12 @@ const beerCards = [
     description: "Gigantophis was once a beast that could swallow you whole. But fast forward 40 million years and the roles are reversed. Like its prehistoric namesake, there is nothing small about Gigantophis Imperial IPA. We used over 2 pounds of hops per barrel in this monster. Bursting with citrus, pine and earthy notes in the aroma and flavor, Gigantophis finishes with a touch of French oak to round out the whole experience. Hop lovers and paleontologists unite! This is the journey you have been waiting for. Ideally served at 50 – 55°F.",
     stats: [`9.3 ABV`, `34IBU`],
     },
-
-
 ];
 
 const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML = textToPrint;
-}  
+};
 
 const cardBuilder = (beerCards) => {
     let domString = '';
@@ -72,6 +70,43 @@ const cardBuilder = (beerCards) => {
     const init = () => {
         cardBuilder(card);
     };
-    
-   
-    init();
+};
+
+
+tourForm = () => {
+    let domString = `<p>Form</p>`;
+
+    printToDom("tour-form", domString);
+};
+
+const tourButtonEvents = () => {
+    document.getElementById("book-tour-button").addEventListener("click", tourForm);
+};
+
+
+
+// function for age verification buttons
+const ageButtonActions = (e) => {
+    targetId = e.target.id;
+    if(targetId === 'noButton'){
+        document.location.href = 'https://www.sesamestreet.org/';
+    }
+    else if(targetId === 'yesButton'){
+        document.location.href = './html/home.html';
+    }
+}
+
+//add event listeners to age verification buttons
+const ageButtonEvents = () => {
+    ageButtons = document.getElementsByClassName('ageButton');
+    for(let i = 0; i < ageButtons.length; i++){
+        ageButtons[i].addEventListener('click', ageButtonActions);
+    }
+}
+
+const init = () => {
+    ageButtonEvents();
+    tourButtonEvents();
+}
+
+init();

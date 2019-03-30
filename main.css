@@ -1,3 +1,26 @@
 body {
     background-color: burlywood;
 }
+
+h1 { 
+    margin: auto;
+    border: 1px solid black;
+    text-align: center; 
+    
+}
+
+.tour-info {
+    margin: 15px;
+}
+.ageTitle {
+    margin-top: 25px;
+    margin-bottom: 100px;
+}
+
+.ageVerif-mid-div {
+    text-align: center;
+}
+
+.ageChallenge {
+    align-content: center;
+}
