@@ -12,16 +12,10 @@ tourForm = () => {
     printToDom("tour-form", domString);
 };
 
-const buttonEvents = () => {
+const tourButtonEvents = () => {
     document.getElementById("book-tour-button").addEventListener("click", tourForm);
-}
-const init = () => {
-    buttonEvents();
-  
 };
 
- init();
-console.log(`setup is working`);
 
 
 // function for age verification buttons
@@ -45,6 +39,7 @@ const ageButtonEvents = () => {
 
 const init = () => {
     ageButtonEvents();
+    tourButtonEvents();
 }
 
 init();
