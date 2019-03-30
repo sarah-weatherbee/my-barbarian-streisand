@@ -24,3 +24,7 @@ h1 {
 .ageChallenge {
     align-content: center;
 }
+
+#tour-form {
+    display: none;
+}
