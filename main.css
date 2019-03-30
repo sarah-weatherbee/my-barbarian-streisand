@@ -2,6 +2,16 @@ body {
     background-color: burlywood;
 }
 
+h1 { 
+    margin: auto;
+    border: 1px solid black;
+    text-align: center; 
+    
+}
+
+.tour-info {
+    margin: 15px;
+}
 .ageTitle {
     margin-top: 25px;
     margin-bottom: 100px;
@@ -15,6 +25,7 @@ body {
     align-content: center;
 }
 
+
 .homeCard1 {
     justify-content: flex-start;
     margin-bottom: 25px;
@@ -24,4 +35,6 @@ body {
     justify-content: flex-end;
 }
 
+
+=======
 
