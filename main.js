@@ -1,4 +1,21 @@
-console.log(`setup is working`);
+
+
+
+const printToDom = (divId, textToPrint) => {
+    const selectedDiv = document.getElementById(divId);
+    selectedDiv.innerHTML = textToPrint;
+};
+
+tourForm = () => {
+    let domString = `<p>Form</p>`;
+
+    printToDom("tour-form", domString);
+};
+
+const tourButtonEvents = () => {
+    document.getElementById("book-tour-button").addEventListener("click", tourForm);
+};
+
 
 
 // function for age verification buttons
@@ -22,6 +39,7 @@ const ageButtonEvents = () => {
 
 const init = () => {
     ageButtonEvents();
+    tourButtonEvents();
 }
 
 init();
