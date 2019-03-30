@@ -2,9 +2,13 @@ body {
     background-color: burlywood;
 }
 
+.ageTitle {
+    margin-top: 25px;
+    margin-bottom: 100px;
+}
+
 .ageVerif-mid-div {
     text-align: center;
-
 }
 
 .ageChallenge {
