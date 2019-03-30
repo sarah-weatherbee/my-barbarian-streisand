@@ -24,3 +24,8 @@ h1 {
 .ageChallenge {
     align-content: center;
 }
+
+/* Footer Styling */
+#socials {
+    font-size: 2rem;
+}
