@@ -20,7 +20,7 @@ const tourButtonEvents = () => {
 
 // function for age verification buttons
 const ageButtonActions = (e) => {
-    targetId = e.target.id;
+    const targetId = e.target.id;
     if(targetId === 'noButton'){
         document.location.href = 'https://www.sesamestreet.org/';
     }
@@ -31,15 +31,37 @@ const ageButtonActions = (e) => {
 
 //add event listeners to age verification buttons
 const ageButtonEvents = () => {
-    ageButtons = document.getElementsByClassName('ageButton');
+    const ageButtons = document.getElementsByClassName('ageButton');
     for(let i = 0; i < ageButtons.length; i++){
         ageButtons[i].addEventListener('click', ageButtonActions);
     }
 }
 
+//function to direct users to tour and beer pages 
+const homeButtonActions = (e) => {
+    const targetId = e.target.id;
+    if(targetId === 'homeBeerButton'){
+        document.location.href = './beersWeBrew.html';
+    }
+    else if(targetId === 'homeTourButton'){
+        document.location.href = './bookATour.html';
+    }
+}
+
+const homeButtonEvents = () => {
+    const homeButtons = document.getElementsByClassName('homeButtons');
+    for(let i = 0; i < homeButtons.length; i++){
+        homeButtons[i].addEventListener('click', homeButtonActions);
+    }
+}
+
 const init = () => {
     ageButtonEvents();
+
+    homeButtonEvents();
+
     tourButtonEvents();
+
 }
 
 init();
