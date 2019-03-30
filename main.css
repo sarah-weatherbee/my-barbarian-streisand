@@ -14,3 +14,14 @@ body {
 .ageChallenge {
     align-content: center;
 }
+
+.homeCard1 {
+    justify-content: flex-start;
+    margin-bottom: 25px;
+}
+
+.homeCard2 {
+    justify-content: flex-end;
+}
+
+
