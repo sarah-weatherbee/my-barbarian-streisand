@@ -59,7 +59,7 @@ const init = () => {
     ageButtonEvents();
 
     homeButtonEvents();
-=======
+
     tourButtonEvents();
 
 }
