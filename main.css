@@ -12,3 +12,15 @@ h1 {
 .tour-info {
     margin: 15px;
 }
+.ageTitle {
+    margin-top: 25px;
+    margin-bottom: 100px;
+}
+
+.ageVerif-mid-div {
+    text-align: center;
+}
+
+.ageChallenge {
+    align-content: center;
+}
