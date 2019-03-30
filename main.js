@@ -14,7 +14,7 @@ tourForm = () => {
 
 const buttonEvents = () => {
     document.getElementById("book-tour-button").addEventListener("click", tourForm);
-
+}
 const init = () => {
     buttonEvents();
   
