@@ -7,7 +7,7 @@ tourForm = () => {
     //let domString = '';
    document.getElementById("tour-form").style="display: block";
 
-    printToDom("tour-form", domString);
+    //printToDom("tour-form", domString);
 };
 
 const confirmation = () => {
@@ -29,8 +29,9 @@ if (document.getElementById("booked") !== null) {
 
 
 const tourButtonEvents = () => {
+    if (document.getElementById("book-tour-button") !== null) {
     document.getElementById("book-tour-button").addEventListener("click", tourForm);
-    
+    }
 };
 
 
