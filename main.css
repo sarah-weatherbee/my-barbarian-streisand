@@ -37,14 +37,13 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url("https://resize-png.pngtree.com/filters:format(webp):quality(100)/thumb_back/fh260/back_pic/05/16/21/7459b23b53a35ba.jpg");
-    background-position: center center ; 
+     background-position: center center ; 
     background-size: cover;
     background-attachment: fixed;
 
 }
 
- #pet img {
+ .cardimg {
     max-width: 75%;
     height: auto;
  }
