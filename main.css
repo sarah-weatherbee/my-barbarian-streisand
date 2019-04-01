@@ -61,3 +61,35 @@ h1 {
 .card.name{
     display: center;
 }
+
+/* Footer Styling */
+#socials {
+    font-size: 2rem;
+}
+
+.homeCard1 {
+    justify-content: flex-start;
+    margin-bottom: 25px;
+}
+
+.homeCard2 {
+    justify-content: flex-end;
+    margin-bottom: 25px;
+}
+
+footer{
+    text-align: center;
+}
+
+footer ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+footer h5 {
+    margin-bottom: 0;
+}
