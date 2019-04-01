@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../main.css">
@@ -12,43 +14,21 @@
 </head>
 
 <body>
-    <!-- Start Nav -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Barbarian Streisand Brewery</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./home.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./beersWeBrew.html">Beers We Brew</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./marketplace.html">Marketplace</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./bookATour.html">Book a Tour</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <!-- End Nav -->
+    <!-- Target Div for Nav -->
+    <div id="navDiv"></div>
+
     <h1>Book a Tour</h1>
     <div id="intro">
-        <p class="lead tour-info"> Are you ready to get all Barbed up? Then come visit our brewery down on Barb's farm! 
-            We're located at 666 Barbarian Streisand Ln., Flint, MI., 66666. 
-            We've got the treats. We've got ALL the beer samples you need. Tours available 24/7, 365. 
-            We've got tours for first-timers. We've got tours for old-timers. 
-            We've got tours for all the timers in between. We've even got Barb herself available for meeting. 
+        <p class="lead tour-info"> Are you ready to get all Barbed up? Then come visit our brewery down on Barb's farm!
+            We're located at 666 Barbarian Streisand Ln., Flint, MI., 66666.
+            We've got the treats. We've got ALL the beer samples you need. Tours available 24/7, 365.
+            We've got tours for first-timers. We've got tours for old-timers.
+            We've got tours for all the timers in between. We've even got Barb herself available for meeting.
             But that's gonna cost ya ;-)
             Tours generally last an hour but if you need more time (and more beer), that's fine with us.
-         </p>
-         <img src="https://www.euronuclear.org/e-news/images/springfield-npp.jpg">
-         <a class="btn btn-primary btn-lg" id="book-tour-button" href="#" role="button">Book Now!</a>
+        </p>
+        <img src="https://www.euronuclear.org/e-news/images/springfield-npp.jpg">
+        <a class="btn btn-primary btn-lg" id="book-tour-button" href="#" role="button">Book Now!</a>
     </div>
     <div id="tour-form" class="hidden">
             <form>
@@ -75,6 +55,8 @@
                     <button type="submit" class="btn btn-primary" id="booked">Submit</button>
             </form>
     </div>
+    <!-- Target Div for Footer -->
+    <div id="footerDiv"></div>
     <!-- Script Tage -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
