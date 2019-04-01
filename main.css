@@ -40,6 +40,19 @@ h1 {
     margin-bottom: 25px;
 }
 
+footer{
+    text-align: center;
+}
 
+footer ul {
+    list-style-type: none;
+    padding-left: 0;
+}
 
+footer p {
+    margin-bottom: 0;
+}
 
+footer h5 {
+    margin-bottom: 0;
+}
