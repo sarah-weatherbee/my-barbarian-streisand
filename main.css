@@ -24,3 +24,41 @@ h1 {
 .ageChallenge {
     align-content: center;
 }
+.beerCards {
+    width: 30%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    max-width: 100%;
+    border: 1px solid black;
+    text-align: center;
+    background-color: gainsboro;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("https://resize-png.pngtree.com/filters:format(webp):quality(100)/thumb_back/fh260/back_pic/05/16/21/7459b23b53a35ba.jpg");
+    background-position: center center ; 
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+ #pet img {
+    max-width: 75%;
+    height: auto;
+ }
+ #many-beers {
+    display: flex;
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-evenly;
+    max-width: 1000px;
+ }
+.card.availability{
+    display: center;
+    font-size: 8px;
+}
+.card.name{
+    display: center;
+}
