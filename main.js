@@ -26,7 +26,10 @@ const confirmation = () => {
 
     alert("You have made the following reservation " + domString);
 };
-document.getElementById("booked").addEventListener("click", confirmation);
+if (document.getElementById("booked") !== null) {
+    document.getElementById("booked").addEventListener("click", confirmation);
+};
+
 
 const tourButtonEvents = () => {
     document.getElementById("book-tour-button").addEventListener("click", tourForm);
