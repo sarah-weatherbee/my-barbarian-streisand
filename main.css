@@ -33,6 +33,10 @@ footer p {
 footer h5 {
     margin-bottom: 0;
 }
+
+.card {
+    margin-bottom: 15px;
+}
 /* ----------           Multi-Page / Shared           ---------- */
 /* -----------------------------END----------------------------- */
 
@@ -117,6 +121,30 @@ footer h5 {
 .row {
     margin-left: 0;
     margin-right: 0;
+}
+
+.cartItemCard .card-body {
+    padding: 0.5rem;
+}
+
+.cartItemCard .card-header {
+    padding: 0.5rem 0.75rem;
+}
+
+.cartItemCard p {
+    font-size: 0.80rem;
+}
+
+#cartItemCardsContainer > .col-12 {
+    padding: 0;
+}
+
+.commerce {
+    margin-top: 8px;
+}
+
+.commerce .btn {
+    font-size: 0.75rem;
 }
 /* ----------      Marketplace (marketplace.html)     ---------- */
 /* -----------------------------END----------------------------- */
