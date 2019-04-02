@@ -1,3 +1,4 @@
+
 const beerCards = [
     {
         name: "Barbarian Streisand",
@@ -49,33 +50,111 @@ const beerCards = [
     },
 ];
 
-const cardBuilder = (beerCards) => {
+
+
+const arrayOfMerch = [
+    {
+        name: "Merch Zero",
+        imageUrl: "http://via.placeholder.com/300",
+        availability: "Available",
+        description: "This is a short description for a T-Shirt",
+        price: 4,
+    },
+    {
+        name: "Merch One",
+        imageUrl: "http://via.placeholder.com/300",
+        availability: "Available",
+        description: "This is a short description for a T-Shirt",
+        price: 4,
+    },
+    {
+        name: "Merch Two",
+        imageUrl: "http://via.placeholder.com/300",
+        availability: "Available",
+        description: "This is a short description for a T-Shirt",
+        price: 4,
+    },
+    {
+        name: "Merch Three",
+        imageUrl: "http://via.placeholder.com/300",
+        availability: "Available",
+        description: "This is a short description for a T-Shirt",
+        price: 4,
+    },
+    {
+        name: "Merch Four",
+        imageUrl: "http://via.placeholder.com/300",
+        availability: "Sold Out",
+        description: "This is a short description for a T-Shirt",
+        price: 4,
+    },
+
+    {
+        name: "Merch Five",
+        imageUrl: "http://via.placeholder.com/300",
+        availability: "Available",
+        description: "This is a short description for a T-Shirt",
+        price: 4,
+    },
+];
+
+const cardBuilder = () => {
     let domString = '';
-    domString += `<div class="row">`;
-    beerCards.forEach((card) => {
-        domString += `<div class="card col-4">`;
-        domString += `    <div class="name">`;
-        domString += `      <h4 class="name">${card.name}</h4>`;
-        domString += `    </div>`;
-        domString += `    <div class="card-body">`;
-        domString += `      <img src=${card.imageUrl} class="card-img-top" alt= "..."`;
-        domString += `      <div class= "availability">`;
-        domString += `       <p class="availability">${card.availability}</p>`;
-        domString += `      </div>`;
-        domString += `      <div class="description">`;
-        domString += `       <p class="test">${card.description}</p>`
-        domString += `      </div>`;
-        domString += `      <div class= " variety">`;
-        domString += `      <h6 class= "variety">${card.variety}</h6>`
-        domString += `     </div>`;
-        domString += `      <div class="stats">`;
-        domString += `      <h5 class "stats">${card.stats}</h5>`;
-        domString += `      </div>`;
+    if (document.getElementById('beerCards') !== null) {
+        beerCards.forEach((card) => {
+            domString += `<div class="card col-4">`;
+            domString += `    <div class="name">`;
+            domString += `      <h4 class="name">${card.name}</h4>`;
+            domString += `    </div>`;
+            domString += `    <div class="card-body">`;
+            domString += `      <img src=${card.imageUrl} class="card-img-top" alt= "..."`;
+            domString += `      <div class= "availability">`;
+            domString += `       <p class="availability">${card.availability}</p>`;
+            domString += `      </div>`;
+            domString += `      <div class="description">`;
+            domString += `       <p class="test">${card.description}</p>`
+            domString += `      </div>`;
+            domString += `      <div class= " variety">`;
+            domString += `      <h6 class= "variety">${card.variety}</h6>`
+            domString += `     </div>`;
+            domString += `      <div class="stats">`;
+            domString += `      <h5 class "stats">${card.stats}</h5>`;
+            domString += `      </div>`;
+            domString += `</div>`;
+         });
         domString += `</div>`;
-     });
-    domString += `</div>`;
-    printToDom('beerCards', domString);
+        printToDom('beerCards', domString);
+
+    } else if (document.getElementById('merchCards') !== null) {
+        domString += `<div class="row">`;
+        arrayOfMerch.forEach((card) => {
+            domString += `<div class="col-4">`;
+            domString += `  <div class="card">`;
+            domString += `    <div class="card-header"> ${card.name}`;
+            domString += `    </div>`;
+            domString += `    <img src=${card.imageUrl} class="card-img-top" alt= "...">`;
+            domString += `    <div class="card-body">`;
+            domString += `      <div class= "availability">`;
+            domString += `        <ul class="list-group list-group-flush">`;
+            domString += `          <li class="list-group-item">Availability</li>`;
+            domString += `          <li class="list-group-item">${card.availability}</li>`;
+            domString += `        </ul>`;
+            domString += `      </div>`;
+            domString += `      <p class="card-text">${card.description}</p>`
+            domString += `      <div class="commerce">`;
+            domString += `          <h4 class="float-left">$${card.price}</h4>`;
+            domString += `          <button type="button" class="btn btn-primary float-right">Add to Cart</button>`;
+            domString += `      </div>`;
+            domString += `    </div>`;
+            domString += `  </div>`;
+            domString += `</div>`;
+        });
+        domString += `</div>`;
+        printToDom('merchCards', domString);
+    }
+
 };
+
 
 
 
@@ -93,12 +172,32 @@ const printToDom = (divId, textToPrint) => {
 
 tourForm = () => {
     let domString = `<p>Form </p>`;
+    //let domString = '';
+    document.getElementById("tour-form").style = "display: block";
 
-    printToDom("tour-form", domString);
+    //printToDom("tour-form", domString);
 };
 
+const confirmation = () => {
+    let domString = '';
+
+    const inputValues = document.getElementsByClassName("form-control");
+    for (i = 0; i < inputValues.length; i++) {
+
+        domString += `${inputValues[i].value}\n`;
+
+    }
+
+
+    alert("You have made the following reservation " + domString);
+};
+if (document.getElementById("booked") !== null) {
+    document.getElementById("booked").addEventListener("click", confirmation);
+};
+
+
 const tourButtonEvents = () => {
-    if (document.getElementById("book-tour-button")!==null) {
+    if (document.getElementById("book-tour-button") !== null) {
         document.getElementById("book-tour-button").addEventListener("click", tourForm);
     }
 };
@@ -238,6 +337,7 @@ const init = () => {
     homeButtonEvents();
     tourButtonEvents();
     cardBuilder(beerCards);
+    cardBuilder();
 }
 
 init();
