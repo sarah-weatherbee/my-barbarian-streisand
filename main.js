@@ -1,12 +1,12 @@
 
-const beerCards = [
+const arrayOfBeer = [
     {
         name: "Barbarian Streisand",
         imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/earth-eagle-brewings-comptonia_1550001857.png",
         availability: "Available only in tap.",
         description: "We use loads of Sterling and Chinook hops in the kettle and hopback (and even more during the dry hop) for intense pine aromatics accentuated by a rye and 2-row malt base for a truly great IPA experience.",
         variety: "Imperial IPA",
-        level: [`8.6ABV`, `68IBU`],
+        stats: [`8.6ABV`, `68IBU`],
     },
     {
         name: "JOIE d’ÉTÉ",
@@ -14,7 +14,7 @@ const beerCards = [
         availability: "Available only bottles.",
         description: "This refreshingly smooth, authentically German beer is light straw in color, infused with light fruit and bready aromatics from the German Pilsner malt, hops, and yeast.",
         variety: "Imperial IPA",
-        level: [`4.5ABV`, `36IBU`],
+        stats: [`4.5ABV`, `36IBU`],
     },
     {
         name: "GIGANTOPHIS",
@@ -22,7 +22,7 @@ const beerCards = [
         availability: "Available on tap and in bottles.",
         description: "A clean, crisp, supremely refreshing lager with hints of all natural lime and black pepper in the flavour and aroma. Pepper and lime go together like hot days and wet beaches!",
         variety: "Imperial IPA",
-        level: [`5.8ABV`, `32IBU`],
+        stats: [`5.8ABV`, `32IBU`],
     },
     {
         name: "GIGANTOPHIS",
@@ -30,7 +30,7 @@ const beerCards = [
         availability: "Available only in bottles.",
         description: "I listen to few and I’m fueled by fire.” Wood-Aged Baltic Porter",
         variety: "Imperial IPA",
-        level: [`9.3ABV`, `34IBU`],
+        stats: [`9.3ABV`, `34IBU`],
     },
     {
         name: "Zombie Repellant Ale",
@@ -38,7 +38,7 @@ const beerCards = [
         availability: "Available on tap and in bottles.",
         description: "In the middle of the night, when all evidence of light has faded, that’s when they come.Be prepared.",
         variety: "Imperial IPA",
-        level: [`6.3ABV`, `38IBU`],
+        stats: [`6.3ABV`, `38IBU`],
     },
 
     {
@@ -46,7 +46,8 @@ const beerCards = [
         imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/band-bohemia-peony-starflower_1495144325.png",
         availability: "Available only in tap.",
         description: "White tea from the Fujian Province takes a ride into outer space with starflower leaves.",
-        level: [`5.5ABV`, `39IBU`],
+        variety: "Imperial IPA",
+        stats: [`5.5ABV`, `39IBU`],
     },
 ];
 
@@ -101,25 +102,25 @@ const arrayOfMerch = [
 const cardBuilder = () => {
     let domString = '';
     if (document.getElementById('beerCards') !== null) {
-        beerCards.forEach((card) => {
+        arrayOfBeer.forEach((card) => {
             domString += `<div class="col-4">`;
             domString += `<div class="card">`;
-            domString += `    <div class="name">`;
-            domString += `      <h4>${card.name}</h4>`;
-            domString += `    </div>`;
+            domString += ` <div class="card-header"> ${card.name}`;   
+            domString += `  </div>`;    
+            domString += `   <img src=${card.imageUrl} class="card-img-top" alt= "...">`;
             domString += `    <div class="card-body">`;
-            domString += `      <img src=${card.imageUrl} class="card-img-top" alt= "..."`;
             domString += `      <div class= "availability">`;
-            domString += `       <p class="ava">${card.availability}</p>`;
+            domString += `       <ul class="list-group list-group-flush">`;
+            domString += `     <li class="list-group-item">Availability</li>`;
+            domString += `      <li class="list-group-item">${card.availability}</li>`;
+            domString += `      <li class="list-group-item">spring</li>`;
+            domString += `      </ul>`;
             domString += `      </div>`;
-            domString += `      <div class="description">`;
-            domString += `       <p class="test">${card.description}</p>`
-            domString += `      </div>`;
-            domString += `      <div class= " variety">`;
             domString += `      <h6 class= "variety">${card.variety}</h6>`
+            domString += `       <p class="card-text">${card.description}</p>`
             domString += `     </div>`;
-            domString += `      <div class="level">`;
-            domString += `      <h5 class "lev">${card.level}</h5>`;
+            domString += `      <div class="stats">`;
+            domString += `      <h5 class "sta">${card.stats}</h5>`;
             domString += `      </div>`;
             domString += `      </div>`;
             domString += `</div>`;

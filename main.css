@@ -79,21 +79,24 @@ footer h5 {
 align-content: center;
 border-block-end-style: solid black;
 }
-.level{
+.sta{
     text-align: center;
     border-block-end-color: #000;
     font-style: italic;
 }
-.ava{
+.ul{
     text-align: center;
     font-style: italic;
+    justify-content: center;
+
 
 }
 
-.name{
+.card-header{
     text-align: center;
     font: bold;
     font-style: italic;
+    justify-content: center;
 }
 .row{
     margin: 15px;
@@ -122,6 +125,11 @@ border-block-end-style: solid black;
 }
 .card{
     justify-content: space-around;
+}
+.card-img-top{
+   width: 200px;
+  justify-items: center;
+  height: 300px;
 }
 
 
