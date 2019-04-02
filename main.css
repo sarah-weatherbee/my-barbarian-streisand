@@ -77,18 +77,21 @@ footer h5 {
 }
 .variety{
 align-content: center;
-background-color: bisque;
+border-block-end-style: solid black;
 }
-.stats{
-    align-content: center;
-    background-color: antiquewhite
+.level{
+    text-align: center;
+    border-block-end-color: #000;
+    font-style: italic;
 }
-.availability{
-    align-content: center;
+.ava{
+    text-align: center;
+    font-style: italic;
 
 }
+
 .name{
-    align-content: center;
+    text-align: center;
     font: bold;
     font-style: italic;
 }
@@ -104,6 +107,7 @@ background-color: bisque;
   box-shadow: 1px 2px 2px 1px;
   
   padding: 0px;
+  background-color: bisque;
   
 
 }
@@ -116,6 +120,10 @@ background-color: bisque;
     padding: 0px;
     justify-content: space-around;
 }
+.card{
+    justify-content: space-around;
+}
+
 
 
 
