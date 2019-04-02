@@ -12,9 +12,13 @@ h1 {
 .tour-info {
     margin: 15px;
 }
+
+.ageTitleText {
+    margin-bottom: 20px;
+}
 .ageTitle {
     margin-top: 25px;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
 
 .ageVerif-mid-div {
@@ -58,4 +62,20 @@ footer p {
 
 footer h5 {
     margin-bottom: 0;
+}
+
+.homeImg1 img {
+    
+    width: 300px;
+    height: auto;
+}
+
+.homeImg2 img {
+    width: auto;
+    height: 300px;
+}
+
+.jumbotron img {
+    width: 1100px;
+    height: auto;
 }
