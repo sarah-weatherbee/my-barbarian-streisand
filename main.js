@@ -43,6 +43,7 @@ const arrayOfMerch = [
         price: 4,
     },
 ];
+const cartArray = [];
 
 const cardBuilder = () => {
     let domString = '';
@@ -66,7 +67,7 @@ const cardBuilder = () => {
             domString += `      <p class="card-text">${card.description}</p>`
             domString += `      <div class="commerce">`;
             domString += `          <h4 class="float-left">$${card.price}</h4>`;
-            domString += `          <button type="button" class="btn btn-primary float-right">Add to Cart</button>`;
+            domString += `          <button type="button" class="btn btn-primary float-right addToCart">Add to Cart</button>`;
             domString += `      </div>`;
             domString += `    </div>`;
             domString += `  </div>`;
@@ -74,14 +75,12 @@ const cardBuilder = () => {
         });
         domString += `</div>`;
         printToDom('merchCards', domString);
+        var addToCartButtons = document.getElementsByClassName('addToCart');
+        for (let button of addToCartButtons) {
+            button.addEventListener('click', function () { addToCart(button.parentElement.id); });
+        }
     }
 };
-
-
-
-
-
-
 
 const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
@@ -158,9 +157,9 @@ const homeButtonEvents = () => {
     }
 }
 
-const headerAndFooter = () => {
+const navAndFooter = () => {
     let domString = '';
-    if (document.getElementById('footerDiv') !== null) {
+    if (document.getElementById('navDiv') !== null) {
         domString = `
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Barbarian Streisand Brewery</a>
@@ -250,7 +249,7 @@ const headerAndFooter = () => {
 }
 
 const init = () => {
-    headerAndFooter();
+    navAndFooter();
     ageButtonEvents();
     homeButtonEvents();
     tourButtonEvents();
