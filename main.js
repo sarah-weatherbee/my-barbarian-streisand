@@ -1,5 +1,6 @@
 const arrayOfMerch = [
     {
+        id: "0",
         name: "Merch Zero",
         imageUrl: "http://via.placeholder.com/300",
         availability: "Available",
@@ -7,6 +8,7 @@ const arrayOfMerch = [
         price: 4,
     },
     {
+        id: "1",
         name: "Merch One",
         imageUrl: "http://via.placeholder.com/300",
         availability: "Available",
@@ -14,6 +16,7 @@ const arrayOfMerch = [
         price: 4,
     },
     {
+        id: "2",
         name: "Merch Two",
         imageUrl: "http://via.placeholder.com/300",
         availability: "Available",
@@ -21,6 +24,7 @@ const arrayOfMerch = [
         price: 4,
     },
     {
+        id: "3",
         name: "Merch Three",
         imageUrl: "http://via.placeholder.com/300",
         availability: "Available",
@@ -28,6 +32,7 @@ const arrayOfMerch = [
         price: 4,
     },
     {
+        id: "4",
         name: "Merch Four",
         imageUrl: "http://via.placeholder.com/300",
         availability: "Sold Out",
@@ -36,6 +41,7 @@ const arrayOfMerch = [
     },
 
     {
+        id: "5",
         name: "Merch Five",
         imageUrl: "http://via.placeholder.com/300",
         availability: "Available",
@@ -67,7 +73,7 @@ const cardBuilder = () => {
             domString += `      <p class="card-text">${card.description}</p>`
             domString += `      <div class="commerce">`;
             domString += `          <h4 class="float-left">$${card.price}</h4>`;
-            domString += `          <button type="button" class="btn btn-primary float-right addToCart">Add to Cart</button>`;
+            domString += `          <button type="button" class="btn btn-primary float-right addToCart" id="${card.id}">Add to Cart</button>`;
             domString += `      </div>`;
             domString += `    </div>`;
             domString += `  </div>`;
@@ -77,9 +83,28 @@ const cardBuilder = () => {
         printToDom('merchCards', domString);
         var addToCartButtons = document.getElementsByClassName('addToCart');
         for (let button of addToCartButtons) {
-            button.addEventListener('click', function () { addToCart(button.parentElement.id); });
+            button.addEventListener('click', function () { addToCart(button.id); });
         }
     }
+};
+
+const addToCart = (id) => {
+    cartArray.push(arrayOfMerch[id]);
+    console.log(cartArray);
+    cartBuilder();
+};
+
+const cartBuilder = () => {
+    if (true) {
+        document.getElementById(`merchCards`).className = 'col-9';
+        document.getElementById('cartContainer').style.display = 'block';
+        let domString = '';
+
+    }
+
+    // let domString = '';
+    // domString += `${cartArray}`;
+    // printToDom('cartContainer', domString);
 };
 
 const printToDom = (divId, textToPrint) => {

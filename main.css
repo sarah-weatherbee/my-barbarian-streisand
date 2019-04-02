@@ -32,6 +32,17 @@ h1 {
 #tour-form {
     display: none;
 }
+
+/* Marketplace Styling */
+.pre-cart {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cartContainer {
+    display: none;
+}
+
 /* Footer Styling */
 #socials {
     font-size: 2rem;
