@@ -56,7 +56,7 @@ const cardBuilder = () => {
     if (document.getElementById('beerCards') !== null) {
 
     } else if (document.getElementById('merchCards') !== null) {
-        domString += `<div class="row">`;
+        domString += `<div class="row" id="problemRow">`;
         arrayOfMerch.forEach((card) => {
             domString += `<div class="col-4">`;
             domString += `  <div class="card">`;
@@ -99,7 +99,7 @@ const cartBuilder = () => {
         document.getElementById(`merchCards`).className = 'col-9';
         document.getElementById('cartContainer').style.display = 'block';
         let domString = '';
-
+        
     }
 
     // let domString = '';

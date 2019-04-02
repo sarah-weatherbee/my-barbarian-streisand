@@ -41,6 +41,12 @@ h1 {
 
 #cartContainer {
     display: none;
+    background-color: lightslategrey;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 /* Footer Styling */
