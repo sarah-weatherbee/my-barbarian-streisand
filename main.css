@@ -24,43 +24,13 @@ h1 {
 .ageChallenge {
     align-content: center;
 }
-.beerCards {
-    width: 30%;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    max-width: 100%;
-    border: 1px solid black;
-    text-align: center;
-    background-color: gainsboro;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-     background-position: center center ; 
-    background-size: cover;
-    background-attachment: fixed;
 
-}
 
- .cardimg {
-    max-width: 75%;
-    height: auto;
- }
- #many-beers {
-    display: flex;
-    flex-flow: row wrap;
-    -webkit-flex-flow: row wrap;
-    justify-content: space-evenly;
-    max-width: 1000px;
- }
-.card.availability{
-    display: center;
-    font-size: 8px;
-}
-.card.name{
-    display: center;
-}
+
+
+
+ 
+
 
 /* Footer Styling */
 #socials {
@@ -93,3 +63,54 @@ footer p {
 footer h5 {
     margin-bottom: 0;
 }
+.test{
+    padding: 10px 0;
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+}
+.variety{
+align-content: center;
+background-color: bisque;
+}
+.stats{
+    align-content: center;
+    background-color: antiquewhite
+}
+.availability{
+    align-content: center;
+
+}
+.name{
+    align-content: center;
+    font: bold;
+    font-style: italic;
+}
+.row{
+    margin: 15px;
+    border: 1px solid BLACK;
+    box-shadow: 1px 2px 2px 1px;
+    
+    -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 15px;
+  border: 1px solid BLACK;
+  box-shadow: 1px 2px 2px 1px;
+  
+  padding: 0px;
+  
+
+}
+
+.cardcol-4{
+    margin: 15px;
+    border: 1px solid BLACK;
+    box-shadow: 1px 2px 2px 1px;
+    width: 400px;
+    padding: 0px;
+    justify-content: space-around;
+}
+
+
+
+  
+    

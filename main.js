@@ -3,7 +3,7 @@ const beerCards = [
         name: "Barbarian Streisand",
         imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/earth-eagle-brewings-comptonia_1550001857.png",
         availability: "Available only in tap.",
-        description: "Gruit with sweet fern horehound.",
+        description: "We use loads of Sterling and Chinook hops in the kettle and hopback (and even more during the dry hop) for intense pine aromatics accentuated by a rye and 2-row malt base for a truly great IPA experience.",
         variety: "Imperial IPA",
         stats: [`8.6ABV`, `68IBU`],
     },
@@ -11,7 +11,7 @@ const beerCards = [
         name: "JOIE d’ÉTÉ",
         imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/crabbies-crabbies-original_1525393707.png",
         availability: "Available only bottles.",
-        description: ".",
+        description: "This refreshingly smooth, authentically German beer is light straw in color, infused with light fruit and bready aromatics from the German Pilsner malt, hops, and yeast.",
         variety: "Imperial IPA",
         stats: [`4.5ABV`, `36IBU`],
     },
@@ -41,41 +41,45 @@ const beerCards = [
     },
 
     {
-    name: "Band of Bohemia",
-    imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/band-bohemia-peony-starflower_1495144325.png",
-    availability: "Available only in tap.",
-    description: "White tea from the Fujian Province takes a ride into outer space with starflower leaves.",
-    stats: [`5.5ABV`, `39IBU`],
+        name: "Band of Bohemia",
+        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/band-bohemia-peony-starflower_1495144325.png",
+        availability: "Available only in tap.",
+        description: "White tea from the Fujian Province takes a ride into outer space with starflower leaves.",
+        stats: [`5.5ABV`, `39IBU`],
     },
 ];
 
-const cardBuilder = (beerCards) => {        
+const cardBuilder = (beerCards) => {
     let domString = '';
     domString += `<div class="row">`;
     beerCards.forEach((card) => {
         domString += `<div class="card col-4">`;
         domString += `    <div class="name">`;
-        domString += `      <h4>${card.name}</h4>`;
+        domString += `      <h4 class="name">${card.name}</h4>`;
         domString += `    </div>`;
         domString += `    <div class="card-body">`;
         domString += `      <img src=${card.imageUrl} class="card-img-top" alt= "..."`;
-        domString += `      <div class= "availability">`; 
-        domString += `       <p>${card.availability}</p>`;
+        domString += `      <div class= "availability">`;
+        domString += `       <p class="availability">${card.availability}</p>`;
         domString += `      </div>`;
         domString += `      <div class="description">`;
-        domString += `       <p>${card.description}</p>`
+        domString += `       <p class="test">${card.description}</p>`
         domString += `      </div>`;
         domString += `      <div class= " variety">`;
-        domString += `      <h6>${card.variety}</h6>`
+        domString += `      <h6 class= "variety">${card.variety}</h6>`
         domString += `     </div>`;
         domString += `      <div class="stats">`;
-        domString += `      <h5>${card.stats}</h5>`;
+        domString += `      <h5 class "stats">${card.stats}</h5>`;
         domString += `      </div>`;
         domString += `</div>`;
-    });
+     });
     domString += `</div>`;
     printToDom('beerCards', domString);
 };
+
+
+
+
 const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML = textToPrint;
@@ -84,7 +88,7 @@ const printToDom = (divId, textToPrint) => {
 
 
 
- 
+
 
 
 tourForm = () => {
@@ -94,7 +98,9 @@ tourForm = () => {
 };
 
 const tourButtonEvents = () => {
-    document.getElementById("book-tour-button").addEventListener("click", tourForm);
+    if (document.getElementById("book-tour-button")!==null) {
+        document.getElementById("book-tour-button").addEventListener("click", tourForm);
+    }
 };
 
 // function for age verification buttons
@@ -226,11 +232,12 @@ const headerAndFooter = () => {
 }
 
 const init = () => {
-    cardBuilder(beerCards);
+
     headerAndFooter();
     ageButtonEvents();
     homeButtonEvents();
     tourButtonEvents();
+    cardBuilder(beerCards);
 }
 
 init();
