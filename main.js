@@ -104,18 +104,6 @@ const cardBuilder = () => {
         beerCards.forEach((card) => {
             domString += `<div class="col-4">`;
             domString += `<div class="card">`;
-            // domString += `<<div class="card-header"> ${card.name}`;
-            // domString += `    </div>`;
-            // domString += `    <img src=${card.imageUrl} class="card-img-top" alt= "...">`;
-            // domString += `    <div class="card-body">`;
-            // domString += `      <div class= "availability">`;
-            // domString += `        <ul class="list-group list-group-flush">`;
-            // domString += `          <li class="list-group-item">Availability</li>`;
-            // domString += `          <li class="list-group-item">${card.availability}</li>`;
-            // domString += `        </ul>`;
-            // domString += `      </div>`;
-            domString += `      <p class="card-text">${card.description}</p>`
-            
             domString += `    <div class="name">`;
             domString += `      <h4>${card.name}</h4>`;
             domString += `    </div>`;
