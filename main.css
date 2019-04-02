@@ -1,3 +1,6 @@
+/* ----------------------------START---------------------------- */
+/* ----------           Multi-Page / Shared           ---------- */
+
 body {
     background-color: burlywood;
 }
@@ -9,59 +12,9 @@ h1 {
     
 }
 
-.tour-info {
-    margin: 15px;
-}
-
-.ageTitleText {
-    margin-bottom: 20px;
-}
-.ageTitle {
-    margin-top: 25px;
-    margin-bottom: 30px;
-}
-
-.ageVerif-mid-div {
-    text-align: center;
-}
-
-.ageChallenge {
-    align-content: center;
-}
-
-#tour-form {
-    display: none;
-}
-
-/* Marketplace Styling */
-.pre-cart {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#cartContainer {
-    display: none;
-    background-color: lightslategrey;
-}
-
-.row {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-/* Footer Styling */
+/* Footer */
 #socials {
     font-size: 2rem;
-}
-
-.homeCard1 {
-    justify-content: flex-start;
-    margin-bottom: 25px;
-}
-
-.homeCard2 {
-    justify-content: flex-end;
-    margin-bottom: 25px;
 }
 
 footer{
@@ -80,6 +33,42 @@ footer p {
 footer h5 {
     margin-bottom: 0;
 }
+/* ----------           Multi-Page / Shared           ---------- */
+/* -----------------------------END----------------------------- */
+
+
+/* ----------------------------START---------------------------- */
+/* ----------      Age Verification (index.html)      ---------- */
+.ageTitleText {
+    margin-bottom: 20px;
+}
+
+.ageTitle {
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.ageVerif-mid-div {
+    text-align: center;
+}
+
+.ageChallenge {
+    align-content: center;
+}
+/* ----------      Age Verification (index.html)      ---------- */
+/* -----------------------------END----------------------------- */
+
+/* ----------------------------START---------------------------- */
+/* ----------          Home Page (home.html)          ---------- */
+.homeCard1 {
+    justify-content: flex-start;
+    margin-bottom: 25px;
+}
+
+.homeCard2 {
+    justify-content: flex-end;
+    margin-bottom: 25px;
+}
 
 .homeImg1 img {
     
@@ -96,3 +85,38 @@ footer h5 {
     width: 1100px;
     height: auto;
 }
+/* ----------          Home Page (home.html)          ---------- */
+/* -----------------------------END----------------------------- */
+
+
+/* ----------------------------START---------------------------- */
+/* ----------       Book A Tour (bookATour.html)      ---------- */
+.tour-info {
+    margin: 15px;
+}
+
+#tour-form {
+    display: none;
+}
+/* ----------       Book A Tour (bookATour.html)      ---------- */
+/* -----------------------------END----------------------------- */
+
+
+/* ----------------------------START---------------------------- */
+/* ----------      Marketplace (marketplace.html)     ---------- */
+.pre-cart {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cartContainer {
+    display: none;
+    background-color: lightslategrey;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+/* ----------      Marketplace (marketplace.html)     ---------- */
+/* -----------------------------END----------------------------- */
