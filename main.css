@@ -12,9 +12,13 @@ h1 {
 .tour-info {
     margin: 15px;
 }
+
+.ageTitleText {
+    margin-bottom: 20px;
+}
 .ageTitle {
     margin-top: 25px;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
 
 .ageVerif-mid-div {
