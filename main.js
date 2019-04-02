@@ -4,13 +4,34 @@ const printToDom = (divId, textToPrint) => {
 };
 
 tourForm = () => {
-    let domString = `<p>Form</p>`;
+    //let domString = '';
+   document.getElementById("tour-form").style="display: block";
 
-    printToDom("tour-form", domString);
+    //printToDom("tour-form", domString);
 };
 
+const confirmation = () => {
+    let domString = '';
+    
+    const inputValues = document.getElementsByClassName("form-control");
+    for(i=0; i < inputValues.length; i++) {
+        
+        domString += `${inputValues[i].value}\n`;
+    
+    }
+    
+
+    alert("You have made the following reservation " + domString);
+};
+if (document.getElementById("booked") !== null) {
+    document.getElementById("booked").addEventListener("click", confirmation);
+};
+
+
 const tourButtonEvents = () => {
+    if (document.getElementById("book-tour-button") !== null) {
     document.getElementById("book-tour-button").addEventListener("click", tourForm);
+    }
 };
 
 
@@ -148,6 +169,7 @@ const init = () => {
     ageButtonEvents();
     homeButtonEvents();
     tourButtonEvents();
+
 }
 
 init();

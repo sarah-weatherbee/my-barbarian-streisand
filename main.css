@@ -25,6 +25,9 @@ h1 {
     align-content: center;
 }
 
+#tour-form {
+    display: none;
+}
 /* Footer Styling */
 #socials {
     font-size: 2rem;

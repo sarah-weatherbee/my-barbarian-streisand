@@ -30,10 +30,35 @@
         <img src="https://www.euronuclear.org/e-news/images/springfield-npp.jpg">
         <a class="btn btn-primary btn-lg" id="book-tour-button" href="#" role="button">Book Now!</a>
     </div>
-    <div id="tour-form"></div>
+    <div id="tour-form" class="hidden">
+            <form>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Name</label>
+                      <input type="name" class="form-control" id="exampleInputName1" aria-describedby="emailHelp" placeholder="Enter name">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputDate1">Date</label>
+                      <input type="date" class="form-control" id="exampleInputDate1" placeholder="Date">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputTime1">Time</label>
+                        <input type="time" class="form-control" id="exampleInputTime1" placeholder="Time">
+                    </div>
+                    <div class="form-group">
+                         <label for="exampleInputContactInfo1">email</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                            <label for="exampleInputTime1">Phone number</label>
+                            <input type="text" class="form-control" id="exampleInputPhone1" placeholder="Phone number">
+                        </div>
+                    <button type="submit" class="btn btn-primary" id="booked">Submit</button>
+            </form>
+    </div>
 
     <!-- Target Div for Footer -->
     <div id="footerDiv"></div>
+
     <!-- Script Tage -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
