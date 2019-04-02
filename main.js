@@ -1,3 +1,88 @@
+const arrayOfMerch = [
+    {
+        name: "Merch Zero",
+        imageUrl: "http://via.placeholder.com/300",
+        availability: "Available",
+        description: "This is a short description for a T-Shirt",
+        price: 4,
+    },
+    {
+        name: "Merch One",
+        imageUrl: "http://via.placeholder.com/300",
+        availability: "Available",
+        description: "This is a short description for a T-Shirt",
+        price: 4,
+    },
+    {
+        name: "Merch Two",
+        imageUrl: "http://via.placeholder.com/300",
+        availability: "Available",
+        description: "This is a short description for a T-Shirt",
+        price: 4,
+    },
+    {
+        name: "Merch Three",
+        imageUrl: "http://via.placeholder.com/300",
+        availability: "Available",
+        description: "This is a short description for a T-Shirt",
+        price: 4,
+    },
+    {
+        name: "Merch Four",
+        imageUrl: "http://via.placeholder.com/300",
+        availability: "Sold Out",
+        description: "This is a short description for a T-Shirt",
+        price: 4,
+    },
+
+    {
+        name: "Merch Five",
+        imageUrl: "http://via.placeholder.com/300",
+        availability: "Available",
+        description: "This is a short description for a T-Shirt",
+        price: 4,
+    },
+];
+
+const cardBuilder = () => {
+    let domString = '';
+    if (document.getElementById('beerCards') !== null) {
+
+    } else if (document.getElementById('merchCards') !== null) {
+        domString += `<div class="row">`;
+        arrayOfMerch.forEach((card) => {
+            domString += `<div class="col-4">`;
+            domString += `  <div class="card">`;
+            domString += `    <div class="card-header"> ${card.name}`;
+            domString += `    </div>`;
+            domString += `    <img src=${card.imageUrl} class="card-img-top" alt= "...">`;
+            domString += `    <div class="card-body">`;
+            domString += `      <div class= "availability">`;
+            domString += `        <ul class="list-group list-group-flush">`;
+            domString += `          <li class="list-group-item">Availability</li>`;
+            domString += `          <li class="list-group-item">${card.availability}</li>`;
+            domString += `        </ul>`;
+            domString += `      </div>`;
+            domString += `      <p class="card-text">${card.description}</p>`
+            domString += `      <div class="commerce">`;
+            domString += `          <h4 class="float-left">$${card.price}</h4>`;
+            domString += `          <button type="button" class="btn btn-primary float-right">Add to Cart</button>`;
+            domString += `      </div>`;
+            domString += `    </div>`;
+            domString += `  </div>`;
+            domString += `</div>`;
+        });
+        domString += `</div>`;
+        printToDom('merchCards', domString);
+    }
+};
+
+
+
+
+
+
+
 const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML = textToPrint;
@@ -5,21 +90,21 @@ const printToDom = (divId, textToPrint) => {
 
 tourForm = () => {
     //let domString = '';
-   document.getElementById("tour-form").style="display: block";
+    document.getElementById("tour-form").style = "display: block";
 
     //printToDom("tour-form", domString);
 };
 
 const confirmation = () => {
     let domString = '';
-    
+
     const inputValues = document.getElementsByClassName("form-control");
-    for(i=0; i < inputValues.length; i++) {
-        
+    for (i = 0; i < inputValues.length; i++) {
+
         domString += `${inputValues[i].value}\n`;
-    
+
     }
-    
+
 
     alert("You have made the following reservation " + domString);
 };
@@ -30,7 +115,7 @@ if (document.getElementById("booked") !== null) {
 
 const tourButtonEvents = () => {
     if (document.getElementById("book-tour-button") !== null) {
-    document.getElementById("book-tour-button").addEventListener("click", tourForm);
+        document.getElementById("book-tour-button").addEventListener("click", tourForm);
     }
 };
 
@@ -169,7 +254,7 @@ const init = () => {
     ageButtonEvents();
     homeButtonEvents();
     tourButtonEvents();
-
+    cardBuilder();
 }
 
 init();
