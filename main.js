@@ -282,25 +282,19 @@ const checkoutStringBuilder = () => {
     checkoutString += `Thank you for your order!\n`;
     checkoutString += `You purchased ${cartArray.length} items for $${calculateTotal()}.00.\n`;
     checkoutString += `The order has been processed with your information on file.\n`;
-    printToDom('checkout-modal-content', checkoutString)
     return checkoutString;
 };
 
 const checkout = () => {
-
-    modalEvents('checkout-modal');
-    checkoutStringBuilder();
-    cartArray.splice(0, cartArray.length);
-    document.getElementById('cartItemCardsContainer').innerHTML = '';
-    updateTotal();
-
     if (cartArray.length !== 0) {
-        alert(checkoutStringBuilder());
+        printToDom('checkout-modal-content', checkoutStringBuilder());
+        modalEvents('checkout-modal');
         cartArray.splice(0, cartArray.length);
         document.getElementById('cartItemCardsContainer').innerHTML = '';
         updateTotal();
     } else if (cartArray.length === 0) {
-        alert(`You can't checkout with an empty cart, silly!`);
+        modalEvents('checkout-modal');
+        printToDom('checkout-modal-content', `You can't checkout with an empty cart, silly!`);
     }
 
 };
