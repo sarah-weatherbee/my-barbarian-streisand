@@ -1,3 +1,58 @@
+
+const arrayOfBeer = [
+    {
+        name: "Barbarian Streisand",
+        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/earth-eagle-brewings-comptonia_1550001857.png",
+        availability: "Available only in tap.",
+        description: "We use loads of Sterling and Chinook hops in the kettle and for intense pine aromatics accentuated by a rye and 2-row malt base for a truly great IPA experience.",
+        variety: "Imperial IPA",
+        stats: [`8.6ABV`, `68IBU`],
+    },
+    {
+        name: "JOIE d’ÉTÉ",
+        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/crabbies-crabbies-original_1525393707.png",
+        availability: "Available only bottles.",
+        description: "This refreshingly smooth, authentically German beer is light straw in color, infused with light fruit and bready aromatics from the German Pilsner malt, hops, and yeast.",
+        variety: "Imperial IPA",
+        stats: [`4.5ABV`, `36IBU`],
+    },
+    {
+        name: "GIGANTOPHIS",
+        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/dead-frog-brewery-pepper-lime-lager_1481218083.png",
+        availability: "Available on tap and in bottles.",
+        description: "A clean, crisp, supremely refreshing lager with hints of all natural lime and black pepper in the flavour and aroma. Pepper and lime go together like hot days and wet beaches!",
+        variety: "Double IPA",
+        stats: [`5.8ABV`, `32IBU`],
+    },
+    {
+        name: "GIGANTOPHIS",
+        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/3-floyds-brewing-company-wiseblood_1475530673.png",
+        availability: "Available only in bottles.",
+        description: "I listen to few and I’m fueled by fire.” Wood-Aged Baltic Porter",
+        variety: "Triple IPA",
+        stats: [`9.3ABV`, `34IBU`],
+    },
+    {
+        name: "Zombie Repellant Ale",
+        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/category-12-brewing-zombie-repellant-ale_1477330970.png",
+        availability: "Available on tap and in bottles.",
+        description: "In the middle of the night, when all evidence of light has faded, that’s when they come.",
+        variety: "Imperial IPA",
+        stats: [`6.3ABV`, `38IBU`],
+    },
+
+    {
+        name: "Band of Bohemia",
+        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/band-bohemia-peony-starflower_1495144325.png",
+        availability: "Available only in tap.",
+        description: "White tea from the Fujian Province takes a ride into outer space with starflower leaves.",
+        variety: "Triple IPA",
+        stats: [`5.5ABV`, `39IBU`],
+    },
+];
+
+
+
 // Comment Template
 // [28x"-"]START[28x"-"]
 // [10x"-"][Nx" "]Page Name (page.html)[Nx" "][10x"-"]
@@ -66,6 +121,31 @@ const cardBuilder = () => {
     let domString = '';
     // Checks if the beerCards div exists (i.e. if you're on the beer page)
     if (document.getElementById('beerCards') !== null) {
+        arrayOfBeer.forEach((card) => {
+            domString += `<div class="col-4">`;
+            domString += `<div class="card">`;
+            domString += ` <div class="card-header"> ${card.name}`;   
+            domString += `  </div>`;    
+            domString += `   <img src=${card.imageUrl} class="card-img-top" alt= "...">`;
+            domString += `    <div class="card-body">`;
+            domString += `      <div class= "availability">`;
+            domString += `       <ul class="list-group list-group-flush">`;
+            domString += `     <li class="list-group-item">Availability</li>`;
+            domString += `      <li class="list-group-item">${card.availability}</li>`;
+            domString += `      <li class="list-group-item">spring</li>`;
+            domString += `      </ul>`;
+            domString += `      </div>`;
+            domString += `      <h6 class= "variety">${card.variety}</h6>`
+            domString += `       <p class="card-text">${card.description}</p>`
+            domString += `     </div>`;
+            domString += `      <div class="stats">`;
+            domString += `      <h5 class "stats">${card.stats}</h5>`;
+            domString += `      </div>`;
+            domString += `      </div>`;
+            domString += `</div>`;
+         });
+        domString += `</div>`;
+        printToDom('beerCards', domString);
 
     }
     // Checks if the merchCards div exists (i.e. if you're on the merch page)
@@ -114,9 +194,10 @@ const findIndexById = (array, id) => {
         }
     });
     return index;
-}
+};
 // --------Arrays, Array Functions, and Global Variables--------
 // -----------------------------END-----------------------------
+
 
 
 // ----------------------------START----------------------------
@@ -221,6 +302,7 @@ const checkout = () => {
 // ----------------------------START----------------------------
 // ----------       Book A Tour (bookATour.html)      ----------
 tourForm = () => {
+    let domString = `<p>Form </p>`;
     //let domString = '';
     document.getElementById("tour-form").style = "display: block";
 
@@ -394,7 +476,7 @@ const navAndFooter = () => {
             <div class="col-12">
                 <p>© Da Best Team Ever. Zero Rights Reserved. Please steal whatever you want</p>
             </div>
-        </div>
+        </div>  
     </footer>
     `
         printToDom('footerDiv', domString);
