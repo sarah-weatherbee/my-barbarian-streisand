@@ -489,7 +489,6 @@ const init = () => {
     ageButtonEvents();
     homeButtonEvents();
     tourButtonEvents();
-    cardBuilder(beerCards);
     cardBuilder();
 }
 
