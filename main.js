@@ -1,58 +1,3 @@
-
-const arrayOfBeer = [
-    {
-        name: "The Barb",
-        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/earth-eagle-brewings-comptonia_1550001857.png",
-        availability: "Available only in tap.",
-        description: "The original. The one that started it all. Hoppy. Bitter, but not too jaded. Like a tour through a butchershop.",
-        variety: "Lager",
-        stats: [`8.6ABV`, `68IBU`],
-    },
-    {
-        name: "JOIE d’Barb",
-        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/crabbies-crabbies-original_1525393707.png",
-        availability: "Available only bottles.",
-        description: "A floral feast for the senses. A waltz through a field of flowers. Feeling crabby? Not anymore you're not.",
-        variety: "Pale ale",
-        stats: [`4.5ABV`, `36IBU`],
-    },
-    {
-        name: "Barb Weizen",
-        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/dead-frog-brewery-pepper-lime-lager_1481218083.png",
-        availability: "Available on tap and in bottles.",
-        description: "A clean, crisp wheat beer, ideal for an afternoon of lawnmowing in your best fur coat. Pair with a bratwurst.",
-        variety: "Wheat beer",
-        stats: [`5.8ABV`, `32IBU`],
-    },
-    {
-        name: "Mystery Juice",
-        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/3-floyds-brewing-company-wiseblood_1475530673.png",
-        availability: "Available only in bottles.",
-        description: "A rich blend with notes of electronic offal. Creamy on the nose. Here at Barbarian Streisand we waste nothing.",
-        variety: "Milk stout",
-        stats: [`9.3ABV`, `34IBU`],
-    },
-    {
-        name: "Zombie Repellant Ale",
-        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/category-12-brewing-zombie-repellant-ale_1477330970.png",
-        availability: "Available on tap and in bottles.",
-        description: "When I walk myself into a cold, dark place, I need Barb's zombie repellant in my cup. Strong notes of depleted uranium",
-        variety: "IPA",
-        stats: [`6.3ABV`, `38IBU`],
-    },
-
-    {
-        name: "Funny Girl",
-        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/band-bohemia-peony-starflower_1495144325.png",
-        availability: "Available only in tap.",
-        description: "Effervescent. Convalescent. Butter meets apple crisp and falls hard in love.",
-        variety: "Amber ale",
-        stats: [`5.5ABV`, `39IBU`],
-    },
-];
-
-
-
 // Comment Template
 // [28x"-"]START[28x"-"]
 // [10x"-"][Nx" "]Page Name (page.html)[Nx" "][10x"-"]
@@ -63,6 +8,59 @@ const arrayOfBeer = [
 
 // ----------------------------START----------------------------
 // --------Arrays, Array Functions, and Global Variables--------
+
+const arrayOfBeer = [
+    {
+        name: "The Barb",
+        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/earth-eagle-brewings-comptonia_1550001857.png",
+        description: "The original. The one that started it all. Hoppy. Bitter, but not too jaded. Like a tour through a butchershop.",
+        variety: "Lager",
+        availability: "Spring",
+        stats: [`8.6ABV`, `68IBU`],
+    },
+    {
+        name: "JOIE d’Barb",
+        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/crabbies-crabbies-original_1525393707.png",
+        description: "A floral feast for the senses. A waltz through a field of flowers. Feeling crabby? Not anymore you're not.",
+        variety: "Pale ale",
+        availability: "Fall",
+        stats: [`4.5ABV`, `36IBU`],
+    },
+    {
+        name: "Barb Weizen",
+        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/dead-frog-brewery-pepper-lime-lager_1481218083.png",
+        description: "A clean, crisp wheat beer, ideal for an afternoon of lawnmowing in your best fur coat. Pair with a bratwurst.",
+        variety: "Wheat beer",
+        availability: "All Year",
+        stats: [`5.8ABV`, `32IBU`],
+    },
+    {
+        name: "Mystery Juice",
+        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/3-floyds-brewing-company-wiseblood_1475530673.png",
+        description: "A rich blend with notes of electronic offal. Creamy on the nose. Here at Barbarian Streisand we waste nothing.",
+        variety: "Milk stout",
+        availability: "Summer",
+        stats: [`9.3ABV`, `34IBU`],
+    },
+    {
+        name: "Zombie Repellant Ale",
+        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/category-12-brewing-zombie-repellant-ale_1477330970.png",
+        description: "When I back myself into a cold, dark corner, I need Barb's zombie repellant in my cup. Strong notes of depleted uranium",
+        variety: "IPA",
+        availability: "Spring and Summer",
+        stats: [`6.3ABV`, `38IBU`],
+    },
+
+    {
+        name: "Funny Girl",
+        imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/band-bohemia-peony-starflower_1495144325.png",
+        description: "An effervescent tickle on the nose. A cinnamon whisper. Butter meets apple crisp and falls in love on the kitchen counter.",
+        variety: "Amber ale",
+        availability: "Winter",
+        stats: [`5.5ABV`, `39IBU`],
+    },
+];
+
 const arrayOfMerch = [
     {
         id: "0",
@@ -123,25 +121,27 @@ const cardBuilder = () => {
     if (document.getElementById('beerCards') !== null) {
         arrayOfBeer.forEach((card) => {
             domString += `<div class="col-4">`;
-            domString += `<div class="card">`;
-            domString += ` <div class="card-header"> ${card.name}`;   
-            domString += `  </div>`;    
-            domString += `   <img src=${card.imageUrl} class="card-img-top" alt= "...">`;
+            domString += `  <div class="card">`;
+            domString += `    <div class="card-header"> ${card.name}`;   
+            domString += `    </div>`;    
+            domString += `    <div class="beerImgContainer">`;
+            domString += `      <img src=${card.imageUrl} class="beerImage" alt= "Picture of ${card.name}">`;
+            domString += `    </div>`;
             domString += `    <div class="card-body">`;
             domString += `      <div class= "availability">`;
-            domString += `       <ul class="list-group list-group-flush">`;
-            domString += `     <li class="list-group-item">Availability</li>`;
-            domString += `      <li class="list-group-item">${card.availability}</li>`;
-            domString += `      <li class="list-group-item">spring</li>`;
-            domString += `      </ul>`;
+            domString += `        <ul class="list-group list-group-flush">`;
+            domString += `          <li class="list-group-item">Availability</li>`;
+            domString += `          <li class="list-group-item">${card.availability}</li>`;
+            domString += `        </ul>`;
             domString += `      </div>`;
             domString += `      <h6 class= "variety">${card.variety}</h6>`
-            domString += `       <p class="card-text">${card.description}</p>`
-            domString += `     </div>`;
-            domString += `      <div class="stats">`;
-            domString += `      <h5 class "stats">${card.stats}</h5>`;
-            domString += `      </div>`;
-            domString += `      </div>`;
+            domString += `      <p class="card-text">${card.description}</p>`
+            domString += `    </div>`;
+            domString += `    <div class="stats row">`;
+            domString += `      <h5 class="col">${card.stats[0]}</h5>`;
+            domString += `      <h5 class="col">${card.stats[1]}</h5>`;
+            domString += `    </div>`;
+            domString += `  </div>`;
             domString += `</div>`;
          });
         domString += `</div>`;
@@ -287,14 +287,12 @@ const checkoutStringBuilder = () => {
 
 const checkout = () => {
     if (cartArray.length !== 0) {
-        printToDom('checkout-modal-content', checkoutStringBuilder());
-        modalEvents('checkout-modal');
+        modalEvents('checkout-modal', 'checkout-modal-content', checkoutStringBuilder());
         cartArray.splice(0, cartArray.length);
         document.getElementById('cartItemCardsContainer').innerHTML = '';
         updateTotal();
     } else if (cartArray.length === 0) {
-        modalEvents('checkout-modal');
-        printToDom('checkout-modal-content', `You can't checkout with an empty cart, silly!`);
+        modalEvents('checkout-modal', 'checkout-modal-content', `You can't checkout with an empty cart, silly!`);
     }
 
 };
@@ -304,9 +302,11 @@ const checkout = () => {
 // ----------------------------START----------------------------
 // -------------------------Modal Events------------------------
 
-const modalEvents = (divId) => {
+//function to show modal, target div (divId2), and then print the correct content
+const modalEvents = (divId, divId2, textToPrint) => {
     const targetModal = document.getElementById(divId);
     $(targetModal).modal("show");
+    printToDom(divId2, textToPrint);
 }
 
 
@@ -329,11 +329,9 @@ const confirmation = () => {
         domString += `</p>${inputValues[i].value}</p>`;
 
     }
-
     
-    modalEvents('form-modal');
+    modalEvents('form-modal', 'form-modal-content', domString);
 
-    printToDom('form-modal-content', domString);
 
 };
 if (document.getElementById("booked") !== null) {
