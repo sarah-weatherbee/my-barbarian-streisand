@@ -2,23 +2,39 @@
 /* ----------           Multi-Page / Shared           ---------- */
 :root {
     /* Coolors Exported Palette - coolors.co/584b53-9d5c63-d6e3f8-fef5ef-e4bb97 */
+    /* HSL */
+    --brown: hsla(323, 8%, 32%, 1);
+    --red: hsla(354, 26%, 49%, 1);
+    --blue: hsla(217, 71%, 91%, 1);
+    --lightTan: hsla(24, 88%, 97%, 1);
+    --darkTan: hsla(28, 59%, 74%, 1);
+    
     /* RGB */
     --brown: rgba(88, 75, 83, 1);
     --red: rgba(157, 92, 99, 1);
     --blue: rgba(214, 227, 248, 1);
     --lightTan: rgba(254, 245, 239, 1);
     --darkTan: rgba(228, 187, 151, 1);
+
+    /* Box Shadows */
+    --container-shadow: 1px 1px 3px -1px rgba(0,0,0,0.5);
+}
+
+.card{
+    box-shadow: var(--container-shadow);
+}
+
+.navbar {
+    background-color: var(--red)!important;
 }
 
 body {
-    background-color: burlywood;
+    background-color: var(--lightTan);
 }
 
 h1 { 
     margin: auto;
-    border: 1px solid black;
     text-align: center; 
-    
 }
 
 /* Footer */
@@ -28,6 +44,8 @@ h1 {
 
 footer{
     text-align: center;
+    /* background-color: var(--brown);
+    color: var(--lightTan);  */
 }
 
 footer ul {
@@ -92,6 +110,12 @@ footer h5 {
 
 /* ----------------------------START---------------------------- */
 /* ----------          Home Page (home.html)          ---------- */
+#ourStory, #ourFacility {
+    background-color: white;
+    padding: 15px;
+    box-shadow: var(--container-shadow);
+}
+
 .homeCard1 {
     justify-content: flex-start;
     margin-bottom: 25px;
@@ -130,6 +154,12 @@ footer h5 {
 
 /* ----------------------------START---------------------------- */
 /* ----------       Book A Tour (bookATour.html)      ---------- */
+
+#intro {
+    background-color: white;
+    box-shadow: var(--container-shadow);
+}
+
 .tour-info {
     margin: 15px;
 }
@@ -180,6 +210,10 @@ footer h5 {
 
 .commerce .btn {
     font-size: 0.75rem;
+}
+
+.padding-left-0 {
+    padding-left: 0;
 }
 /* ----------      Marketplace (marketplace.html)     ---------- */
 /* -----------------------------END----------------------------- */
