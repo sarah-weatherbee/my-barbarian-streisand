@@ -1,5 +1,14 @@
 /* ----------------------------START---------------------------- */
 /* ----------           Multi-Page / Shared           ---------- */
+:root {
+    /* Coolors Exported Palette - coolors.co/584b53-9d5c63-d6e3f8-fef5ef-e4bb97 */
+    /* RGB */
+    --brown: rgba(88, 75, 83, 1);
+    --red: rgba(157, 92, 99, 1);
+    --blue: rgba(214, 227, 248, 1);
+    --lightTan: rgba(254, 245, 239, 1);
+    --darkTan: rgba(228, 187, 151, 1);
+}
 
 :root {
     /* Coolors Exported Palette - coolors.co/584b53-9d5c63-d6e3f8-fef5ef-e4bb97 */
@@ -62,8 +71,17 @@ footer h5 {
 
 /* ----------------------------START---------------------------- */
 /* ----------      Age Verification (index.html)      ---------- */
+.ageContainer,
+.ageRow {
+    height: 100vh;
+}
+
 .ageTitleText {
     margin-bottom: 20px;
+}
+
+.ageTitleText {
+    border: none;
 }
 
 .ageTitle {
@@ -71,8 +89,18 @@ footer h5 {
     margin-bottom: 30px;
 }
 
+.right-column,
+.left-column {
+    background-color: var(--red);
+}
+
 .ageVerif-mid-div {
     text-align: center;
+    background-color: var(--blue);
+}
+
+.agePhoto {
+    border: 2px solid rgb(105, 105, 105);
 }
 
 .ageChallenge {
@@ -104,9 +132,16 @@ footer h5 {
     height: 300px;
 }
 
+.jumbotron {
+    background-color: rgba(0, 0, 0, 0.281);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
 .jumbotron img {
-    width: 1100px;
-    height: auto;
+    max-height: 400px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 /* ----------          Home Page (home.html)          ---------- */
 /* -----------------------------END----------------------------- */
