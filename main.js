@@ -4,7 +4,7 @@ const arrayOfBeer = [
         name: "Barbarian Streisand",
         imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/earth-eagle-brewings-comptonia_1550001857.png",
         availability: "Available only in tap.",
-        description: "We use loads of Sterling and Chinook hops in the kettle and hopback (and even more during the dry hop) for intense pine aromatics accentuated by a rye and 2-row malt base for a truly great IPA experience.",
+        description: "We use loads of Sterling and Chinook hops in the kettle and for intense pine aromatics accentuated by a rye and 2-row malt base for a truly great IPA experience.",
         variety: "Imperial IPA",
         stats: [`8.6ABV`, `68IBU`],
     },
@@ -21,7 +21,7 @@ const arrayOfBeer = [
         imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/dead-frog-brewery-pepper-lime-lager_1481218083.png",
         availability: "Available on tap and in bottles.",
         description: "A clean, crisp, supremely refreshing lager with hints of all natural lime and black pepper in the flavour and aroma. Pepper and lime go together like hot days and wet beaches!",
-        variety: "Imperial IPA",
+        variety: "Double IPA",
         stats: [`5.8ABV`, `32IBU`],
     },
     {
@@ -29,14 +29,14 @@ const arrayOfBeer = [
         imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/3-floyds-brewing-company-wiseblood_1475530673.png",
         availability: "Available only in bottles.",
         description: "I listen to few and I’m fueled by fire.” Wood-Aged Baltic Porter",
-        variety: "Imperial IPA",
+        variety: "Triple IPA",
         stats: [`9.3ABV`, `34IBU`],
     },
     {
         name: "Zombie Repellant Ale",
         imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/category-12-brewing-zombie-repellant-ale_1477330970.png",
         availability: "Available on tap and in bottles.",
-        description: "In the middle of the night, when all evidence of light has faded, that’s when they come.Be prepared.",
+        description: "In the middle of the night, when all evidence of light has faded, that’s when they come.",
         variety: "Imperial IPA",
         stats: [`6.3ABV`, `38IBU`],
     },
@@ -46,7 +46,7 @@ const arrayOfBeer = [
         imageUrl: "https://cdn.justwineapp.com/assets/beer/bottle/band-bohemia-peony-starflower_1495144325.png",
         availability: "Available only in tap.",
         description: "White tea from the Fujian Province takes a ride into outer space with starflower leaves.",
-        variety: "Imperial IPA",
+        variety: "Triple IPA",
         stats: [`5.5ABV`, `39IBU`],
     },
 ];
@@ -120,7 +120,7 @@ const cardBuilder = () => {
             domString += `       <p class="card-text">${card.description}</p>`
             domString += `     </div>`;
             domString += `      <div class="stats">`;
-            domString += `      <h5 class "sta">${card.stats}</h5>`;
+            domString += `      <h5 class "stats">${card.stats}</h5>`;
             domString += `      </div>`;
             domString += `      </div>`;
             domString += `</div>`;

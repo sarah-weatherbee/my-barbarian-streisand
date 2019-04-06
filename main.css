@@ -79,12 +79,13 @@ footer h5 {
 align-content: center;
 border-block-end-style: solid black;
 }
-.sta{
+.stats{
     text-align: center;
     border-block-end-color: #000;
     font-style: italic;
+    justify-content: center;
 }
-.ul{
+.list-group-flush{
     text-align: center;
     font-style: italic;
     justify-content: center;
@@ -108,12 +109,8 @@ border-block-end-style: solid black;
   margin: 15px;
   border: 1px solid BLACK;
   box-shadow: 1px 2px 2px 1px;
-  
   padding: 0px;
-  background-color: bisque;
-  
-
-}
+  }
 
 .cardcol-4{
     margin: 15px;
@@ -128,8 +125,12 @@ border-block-end-style: solid black;
 }
 .card-img-top{
    width: 200px;
-  justify-items: center;
+  justify-self: center;
   height: 300px;
+margin: 10px;
+border-radius: 3%;
+
+
 }
 
 
