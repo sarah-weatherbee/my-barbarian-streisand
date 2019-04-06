@@ -148,3 +148,23 @@ footer h5 {
 }
 /* ----------      Marketplace (marketplace.html)     ---------- */
 /* -----------------------------END----------------------------- */
+
+
+/* ----------------------------START---------------------------- */
+/* ----------     Beers we Brew (beersWeBrew.html)    ---------- */
+
+.stats {
+    text-align: center;
+}
+
+.beerImgContainer {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.beerImage {
+    height: 200px;
+    width: auto;
+}
+/* ----------     Beers we Brew (beersWeBrew.html)    ---------- */
+/* -----------------------------END----------------------------- */
