@@ -293,7 +293,7 @@ const checkout = () => {
     cartArray.splice(0, cartArray.length);
     document.getElementById('cartItemCardsContainer').innerHTML = '';
     updateTotal();
-=======
+
     if (cartArray.length !== 0) {
         alert(checkoutStringBuilder());
         cartArray.splice(0, cartArray.length);
