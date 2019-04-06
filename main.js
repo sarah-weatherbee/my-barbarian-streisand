@@ -183,11 +183,13 @@ const checkoutStringBuilder = () => {
     checkoutString += `Thank you for your order!\n`;
     checkoutString += `You purchased ${cartArray.length} items for $${calculateTotal()}.00.\n`;
     checkoutString += `The order has been processed with your information on file.\n`;
+    printToDom('checkout-modal-content', checkoutString)
     return checkoutString;
 };
 
 const checkout = () => {
-    alert(checkoutStringBuilder());
+    modalEvents('checkout-modal');
+    checkoutStringBuilder();
     cartArray.splice(0, cartArray.length);
     document.getElementById('cartItemCardsContainer').innerHTML = '';
     updateTotal();
