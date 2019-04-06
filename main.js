@@ -120,7 +120,7 @@ const cardBuilder = () => {
     // Checks if the beerCards div exists (i.e. if you're on the beer page)
     if (document.getElementById('beerCards') !== null) {
         arrayOfBeer.forEach((card) => {
-            domString += `<div class="col-4">`;
+            domString += `<div class="col-12 col-md-6 col-lg-4">`;
             domString += `  <div class="card">`;
             domString += `    <div class="card-header"> ${card.name}`;   
             domString += `    </div>`;    
@@ -152,7 +152,7 @@ const cardBuilder = () => {
     else if (document.getElementById('merchCards') !== null) {
         domString += `<div class="row">`;
         arrayOfMerch.forEach((card) => {
-            domString += `<div class="col-4">`;
+            domString += `<div class="col-12 col-md-6 col-lg-4">`;
             domString += `  <div class="card">`;
             domString += `    <div class="card-header"> ${card.name}`;
             domString += `    </div>`;
@@ -206,7 +206,8 @@ const findIndexById = (array, id) => {
 const addToCart = (id) => {
     // Should only run on the first addToCart event
     if (document.getElementById('cartContainer').style.display !== 'block') {
-        document.getElementById(`merchCards`).className = 'col-9';
+        document.getElementById(`merchCards`).className = 'col-6 col-sm-7 col-md-8 col-lg-9 padding-left-0 padding-left-0';
+        document.getElementById(`pageContainer`).className = 'd-flex col-12';
         document.getElementById('cartContainer').style.display = 'block';
         // printToDom('cartItemCardsContainer', cartArray);
     }
