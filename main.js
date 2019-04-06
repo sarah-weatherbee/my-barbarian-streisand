@@ -151,8 +151,26 @@ const removeFromCart = (id) => {
 const cartItemCardBuilder = () => {
     let domString = '';
     cartArray.forEach((item) => {
-        domString += item.name;
-        domString += `<button type="button" class="btn btn-primary float-right removeFromCart" id="${item.id}">Remove</button>`;
+        domString += `<div class="col-12">`;
+        domString += `  <div class="card cartItemCard">`;
+        domString += `    <div class="card-header"> ${item.name}`;
+        domString += `    </div>`;
+        domString += `    <div class="card-body">`;
+        domString += `      <div class="row">`;
+        domString += `      <div class="col-5">`;
+        domString += `        <img src=${item.imageUrl} class="card-img-top" alt= "...">`;
+        domString += `      </div>`;
+        domString += `      <div class="col-7">`;
+        domString += `        <p class="card-text">${item.description}</p>`
+        domString += `      </div>`;
+        domString += `      </div>`;
+        domString += `      <div class="commerce">`;
+        domString += `          <h5 class="float-left">$${item.price}</h5>`;
+        domString += `          <button type="button" class="btn btn-outline-danger float-right removeFromCart" id="${item.id}">Remove</button>`;
+        domString += `      </div>`;
+        domString += `    </div>`;
+        domString += `  </div>`;
+        domString += `</div>`;
     });
     return domString;
 };
@@ -187,10 +205,14 @@ const checkoutStringBuilder = () => {
 };
 
 const checkout = () => {
-    alert(checkoutStringBuilder());
-    cartArray.splice(0, cartArray.length);
-    document.getElementById('cartItemCardsContainer').innerHTML = '';
-    updateTotal();
+    if (cartArray.length !== 0) {
+        alert(checkoutStringBuilder());
+        cartArray.splice(0, cartArray.length);
+        document.getElementById('cartItemCardsContainer').innerHTML = '';
+        updateTotal();
+    } else if (cartArray.length === 0) {
+        alert(`You can't checkout with an empty cart, silly!`);
+    }
 };
 // ----------      Marketplace (marketplace.html)     ----------
 // -----------------------------END-----------------------------
