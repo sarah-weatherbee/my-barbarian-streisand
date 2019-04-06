@@ -201,5 +201,19 @@ footer h5 {
     height: 200px;
     width: auto;
 }
+
+.card-header {
+    text-align: center;
+    font-style: italic;
+}
+
+.list-group {
+    text-align: center;
+}
+
+.card-text{
+    font-size: 0.85em;
+}
+
 /* ----------     Beers we Brew (beersWeBrew.html)    ---------- */
 /* -----------------------------END----------------------------- */
