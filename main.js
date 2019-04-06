@@ -287,14 +287,12 @@ const checkoutStringBuilder = () => {
 
 const checkout = () => {
     if (cartArray.length !== 0) {
-        printToDom('checkout-modal-content', checkoutStringBuilder());
-        modalEvents('checkout-modal');
+        modalEvents('checkout-modal', 'checkout-modal-content', checkoutStringBuilder());
         cartArray.splice(0, cartArray.length);
         document.getElementById('cartItemCardsContainer').innerHTML = '';
         updateTotal();
     } else if (cartArray.length === 0) {
-        modalEvents('checkout-modal');
-        printToDom('checkout-modal-content', `You can't checkout with an empty cart, silly!`);
+        modalEvents('checkout-modal', 'checkout-modal-content', `You can't checkout with an empty cart, silly!`);
     }
 
 };
@@ -304,9 +302,11 @@ const checkout = () => {
 // ----------------------------START----------------------------
 // -------------------------Modal Events------------------------
 
-const modalEvents = (divId) => {
+//function to show modal, target div (divId2), and then print the correct content
+const modalEvents = (divId, divId2, textToPrint) => {
     const targetModal = document.getElementById(divId);
     $(targetModal).modal("show");
+    printToDom(divId2, textToPrint);
 }
 
 
@@ -329,11 +329,9 @@ const confirmation = () => {
         domString += `</p>${inputValues[i].value}</p>`;
 
     }
-
     
-    modalEvents('form-modal');
+    modalEvents('form-modal', 'form-modal-content', domString);
 
-    printToDom('form-modal-content', domString);
 
 };
 if (document.getElementById("booked") !== null) {
