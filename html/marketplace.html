@@ -22,8 +22,16 @@
     <!-- End Header/Banner -->
 
     <!-- Start Target Divs -->
-    <div id="merchCards"></div>
-    <div id="cartContainer"></div>
+    <div class="row">
+        <div id="merchCards" class="col-9 pre-cart"></div>
+        <div id="cartContainer" class="col-3">
+            <h2>Cart</h2>
+            <div id="cartItemCardsContainer" class="row">
+            </div>
+            <h4 class="float-left" id="total">Total: $0.00</h4>
+            <button type="button" class="btn btn-primary float-right" id="checkout">Checkout</button>
+        </div>
+    </div>
     <!-- End Target Divs -->
 
     <!-- Target Div for Footer -->

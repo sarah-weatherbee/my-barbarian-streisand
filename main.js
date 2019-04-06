@@ -53,8 +53,19 @@ const arrayOfBeer = [
 
 
 
+// Comment Template
+// [28x"-"]START[28x"-"]
+// [10x"-"][Nx" "]Page Name (page.html)[Nx" "][10x"-"]
+// (where 20+(2N)+text = 61 i.e. it lines up with start/end)
+// CODE GOES HERE
+// [10x"-"][Nx" "]Page Name (page.html)[Nx" "][10x"-"]
+// [29x"-"]END[29x"-"]
+
+// ----------------------------START----------------------------
+// --------Arrays, Array Functions, and Global Variables--------
 const arrayOfMerch = [
     {
+        id: "0",
         name: "Merch Zero",
         imageUrl: "http://via.placeholder.com/300",
         availability: "Available",
@@ -62,6 +73,7 @@ const arrayOfMerch = [
         price: 4,
     },
     {
+        id: "1",
         name: "Merch One",
         imageUrl: "http://via.placeholder.com/300",
         availability: "Available",
@@ -69,6 +81,7 @@ const arrayOfMerch = [
         price: 4,
     },
     {
+        id: "2",
         name: "Merch Two",
         imageUrl: "http://via.placeholder.com/300",
         availability: "Available",
@@ -76,6 +89,7 @@ const arrayOfMerch = [
         price: 4,
     },
     {
+        id: "3",
         name: "Merch Three",
         imageUrl: "http://via.placeholder.com/300",
         availability: "Available",
@@ -83,6 +97,7 @@ const arrayOfMerch = [
         price: 4,
     },
     {
+        id: "4",
         name: "Merch Four",
         imageUrl: "http://via.placeholder.com/300",
         availability: "Sold Out",
@@ -91,6 +106,7 @@ const arrayOfMerch = [
     },
 
     {
+        id: "5",
         name: "Merch Five",
         imageUrl: "http://via.placeholder.com/300",
         availability: "Available",
@@ -98,9 +114,12 @@ const arrayOfMerch = [
         price: 4,
     },
 ];
+const cartArray = [];
 
+// Function for building Beer Cards and Merch Cards
 const cardBuilder = () => {
     let domString = '';
+    // Checks if the beerCards div exists (i.e. if you're on the beer page)
     if (document.getElementById('beerCards') !== null) {
         arrayOfBeer.forEach((card) => {
             domString += `<div class="col-4">`;
@@ -128,7 +147,9 @@ const cardBuilder = () => {
         domString += `</div>`;
         printToDom('beerCards', domString);
 
-    } else if (document.getElementById('merchCards') !== null) {
+    }
+    // Checks if the merchCards div exists (i.e. if you're on the merch page)
+    else if (document.getElementById('merchCards') !== null) {
         domString += `<div class="row">`;
         arrayOfMerch.forEach((card) => {
             domString += `<div class="col-4">`;
@@ -146,33 +167,140 @@ const cardBuilder = () => {
             domString += `      <p class="card-text">${card.description}</p>`
             domString += `      <div class="commerce">`;
             domString += `          <h4 class="float-left">$${card.price}</h4>`;
-            domString += `          <button type="button" class="btn btn-primary float-right">Add to Cart</button>`;
+            domString += `          <button type="button" class="btn btn-primary float-right addToCart" id="${card.id}">Add to Cart</button>`;
             domString += `      </div>`;
             domString += `    </div>`;
             domString += `  </div>`;
             domString += `</div>`;
         });
         domString += `</div>`;
+        // Prints the merchCards to the dom
         printToDom('merchCards', domString);
+        // Adds listeners to the addToCart buttons
+        var addToCartButtons = document.getElementsByClassName('addToCart');
+        for (let button of addToCartButtons) {
+            button.addEventListener('click', function () { addToCart(button.id); });
+        }
+    }
+    // if both of these fail, you don't need cards!
+};
+
+// function for determining the index of an object in an array given the array and the object's id value
+const findIndexById = (array, id) => {
+    let index = '';
+    array.forEach(element => {
+        if (element.id === id) {
+            index = array.indexOf(element);
+        }
+    });
+    return index;
+};
+// --------Arrays, Array Functions, and Global Variables--------
+// -----------------------------END-----------------------------
+
+
+
+// ----------------------------START----------------------------
+// ----------      Marketplace (marketplace.html)     ----------
+
+const addToCart = (id) => {
+    // Should only run on the first addToCart event
+    if (document.getElementById('cartContainer').style.display !== 'block') {
+        document.getElementById(`merchCards`).className = 'col-9';
+        document.getElementById('cartContainer').style.display = 'block';
+        // printToDom('cartItemCardsContainer', cartArray);
     }
 
+    // Should run every addToCartEvent
+    cartArray.push(arrayOfMerch[id]);
+    let cartString = cartItemCardBuilder();
+    printToDom('cartItemCardsContainer', cartString);
+    cartListeners();
+    updateTotal();
 };
 
-
-
-
-
-const printToDom = (divId, textToPrint) => {
-    const selectedDiv = document.getElementById(divId);
-    selectedDiv.innerHTML = textToPrint;
+const removeFromCart = (id) => {
+    // Should run every removeFromCartEvent
+    let targetItemIndex = findIndexById(cartArray, id);
+    cartArray.splice(targetItemIndex, 1);
+    let cartString = cartItemCardBuilder();
+    printToDom('cartItemCardsContainer', cartString);
+    cartListeners();
+    updateTotal();
 };
 
+const cartItemCardBuilder = () => {
+    let domString = '';
+    cartArray.forEach((item) => {
+        domString += `<div class="col-12">`;
+        domString += `  <div class="card cartItemCard">`;
+        domString += `    <div class="card-header"> ${item.name}`;
+        domString += `    </div>`;
+        domString += `    <div class="card-body">`;
+        domString += `      <div class="row">`;
+        domString += `      <div class="col-5">`;
+        domString += `        <img src=${item.imageUrl} class="card-img-top" alt= "...">`;
+        domString += `      </div>`;
+        domString += `      <div class="col-7">`;
+        domString += `        <p class="card-text">${item.description}</p>`
+        domString += `      </div>`;
+        domString += `      </div>`;
+        domString += `      <div class="commerce">`;
+        domString += `          <h5 class="float-left">$${item.price}</h5>`;
+        domString += `          <button type="button" class="btn btn-outline-danger float-right removeFromCart" id="${item.id}">Remove</button>`;
+        domString += `      </div>`;
+        domString += `    </div>`;
+        domString += `  </div>`;
+        domString += `</div>`;
+    });
+    return domString;
+};
+
+const cartListeners = () => {
+    var removeFromCartButtons = document.getElementsByClassName('removeFromCart');
+    for (let button of removeFromCartButtons) {
+        button.addEventListener('click', function () { removeFromCart(button.id); });
+    }
+    document.getElementById('checkout').addEventListener('click', checkout);
+};
+
+const updateTotal = () => {
+    let calculatedTotal = calculateTotal();
+    document.getElementById('total').innerHTML = `Total: $${calculatedTotal}.00`;
+};
+
+const calculateTotal = () => {
+    let calculatedTotal = 0;
+    cartArray.forEach((item) => {
+        calculatedTotal += item.price;
+    })
+    return calculatedTotal;
+};
+
+const checkoutStringBuilder = () => {
+    let checkoutString = '';
+    checkoutString += `Thank you for your order!\n`;
+    checkoutString += `You purchased ${cartArray.length} items for $${calculateTotal()}.00.\n`;
+    checkoutString += `The order has been processed with your information on file.\n`;
+    return checkoutString;
+};
+
+const checkout = () => {
+    if (cartArray.length !== 0) {
+        alert(checkoutStringBuilder());
+        cartArray.splice(0, cartArray.length);
+        document.getElementById('cartItemCardsContainer').innerHTML = '';
+        updateTotal();
+    } else if (cartArray.length === 0) {
+        alert(`You can't checkout with an empty cart, silly!`);
+    }
+};
+// ----------      Marketplace (marketplace.html)     ----------
+// -----------------------------END-----------------------------
 
 
-
-
-
-
+// ----------------------------START----------------------------
+// ----------       Book A Tour (bookATour.html)      ----------
 tourForm = () => {
     let domString = `<p>Form </p>`;
     //let domString = '';
@@ -204,7 +332,13 @@ const tourButtonEvents = () => {
         document.getElementById("book-tour-button").addEventListener("click", tourForm);
     }
 };
+// ----------       Book A Tour (bookATour.html)      ----------
+// -----------------------------END-----------------------------
 
+
+
+// ----------------------------START----------------------------
+// ----------      Age Verification (index.html)      ----------
 // function for age verification buttons
 const ageButtonActions = (e) => {
     const targetId = e.target.id;
@@ -223,7 +357,12 @@ const ageButtonEvents = () => {
         ageButtons[i].addEventListener('click', ageButtonActions);
     }
 }
+// ----------      Age Verification (index.html)      ----------
+// -----------------------------END-----------------------------
 
+
+// ----------------------------START----------------------------
+// ----------          Home Page (home.html)          ----------
 //function to direct users to tour and beer pages 
 const homeButtonActions = (e) => {
     const targetId = e.target.id;
@@ -241,10 +380,21 @@ const homeButtonEvents = () => {
         homeButtons[i].addEventListener('click', homeButtonActions);
     }
 }
+// ----------          Home Page (home.html)          ----------
+// -----------------------------END-----------------------------
 
-const headerAndFooter = () => {
+
+// ----------------------------START----------------------------
+// ----------           Multi-Page / Shared           ----------
+// Prints the provided string to the html element with the provided id
+const printToDom = (divId, textToPrint) => {
+    const selectedDiv = document.getElementById(divId);
+    selectedDiv.innerHTML = textToPrint;
+};
+// Checks for the target div tags for the nav and footer and prints the respective content when appropriate
+const navAndFooter = () => {
     let domString = '';
-    if (document.getElementById('footerDiv') !== null) {
+    if (document.getElementById('navDiv') !== null) {
         domString = `
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Barbarian Streisand Brewery</a>
@@ -333,9 +483,9 @@ const headerAndFooter = () => {
     }
 }
 
+// functions to run on page load
 const init = () => {
-
-    headerAndFooter();
+    navAndFooter();
     ageButtonEvents();
     homeButtonEvents();
     tourButtonEvents();
@@ -344,3 +494,5 @@ const init = () => {
 }
 
 init();
+// ----------           Multi-Page / Shared           ----------
+// -----------------------------END-----------------------------

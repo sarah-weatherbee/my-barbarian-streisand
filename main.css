@@ -1,3 +1,6 @@
+/* ----------------------------START---------------------------- */
+/* ----------           Multi-Page / Shared           ---------- */
+
 body {
     background-color: burlywood;
 }
@@ -9,49 +12,9 @@ h1 {
     
 }
 
-.tour-info {
-    margin: 15px;
-}
-
-.ageTitleText {
-    margin-bottom: 20px;
-}
-.ageTitle {
-    margin-top: 25px;
-    margin-bottom: 30px;
-}
-
-.ageVerif-mid-div {
-    text-align: center;
-}
-
-.ageChallenge {
-    align-content: center;
-}
-
-
-
-
-
- 
-
-
-#tour-form {
-    display: none;
-}
-/* Footer Styling */
+/* Footer */
 #socials {
     font-size: 2rem;
-}
-
-.homeCard1 {
-    justify-content: flex-start;
-    margin-bottom: 25px;
-}
-
-.homeCard2 {
-    justify-content: flex-end;
-    margin-bottom: 25px;
 }
 
 footer{
@@ -70,74 +33,46 @@ footer p {
 footer h5 {
     margin-bottom: 0;
 }
-.test{
-    padding: 10px 0;
-    border-top:1px solid #000;
-    border-bottom:1px solid #000;
+
+.card {
+    margin-bottom: 15px;
 }
-.variety{
-align-content: center;
-border-block-end-style: solid black;
+/* ----------           Multi-Page / Shared           ---------- */
+/* -----------------------------END----------------------------- */
+
+
+/* ----------------------------START---------------------------- */
+/* ----------      Age Verification (index.html)      ---------- */
+.ageTitleText {
+    margin-bottom: 20px;
 }
-.stats{
+
+.ageTitle {
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.ageVerif-mid-div {
     text-align: center;
-    border-block-end-color: #000;
-    font-style: italic;
-    justify-content: center;
-}
-.list-group-flush{
-    text-align: center;
-    font-style: italic;
-    justify-content: center;
-
-
 }
 
-.card-header{
-    text-align: center;
-    font: bold;
-    font-style: italic;
-    justify-content: center;
+.ageChallenge {
+    align-content: center;
 }
-.row{
-    margin: 15px;
-    border: 1px solid BLACK;
-    box-shadow: 1px 2px 2px 1px;
-    
-    -webkit-flex-flow: row wrap;
-  justify-content: space-around;
-  margin: 15px;
-  border: 1px solid BLACK;
-  box-shadow: 1px 2px 2px 1px;
-  padding: 0px;
-  }
+/* ----------      Age Verification (index.html)      ---------- */
+/* -----------------------------END----------------------------- */
 
-.cardcol-4{
-    margin: 15px;
-    border: 1px solid BLACK;
-    box-shadow: 1px 2px 2px 1px;
-    width: 400px;
-    padding: 0px;
-    justify-content: space-around;
-}
-.card{
-    justify-content: space-around;
-}
-.card-img-top{
-   width: 200px;
-  justify-self: center;
-  height: 300px;
-margin: 10px;
-border-radius: 3%;
-
-
+/* ----------------------------START---------------------------- */
+/* ----------          Home Page (home.html)          ---------- */
+.homeCard1 {
+    justify-content: flex-start;
+    margin-bottom: 25px;
 }
 
-
-
-
-  
-    
+.homeCard2 {
+    justify-content: flex-end;
+    margin-bottom: 25px;
+}
 
 .homeImg1 img {
     
@@ -154,3 +89,62 @@ border-radius: 3%;
     width: 1100px;
     height: auto;
 }
+/* ----------          Home Page (home.html)          ---------- */
+/* -----------------------------END----------------------------- */
+
+
+/* ----------------------------START---------------------------- */
+/* ----------       Book A Tour (bookATour.html)      ---------- */
+.tour-info {
+    margin: 15px;
+}
+
+#tour-form {
+    display: none;
+}
+/* ----------       Book A Tour (bookATour.html)      ---------- */
+/* -----------------------------END----------------------------- */
+
+
+/* ----------------------------START---------------------------- */
+/* ----------      Marketplace (marketplace.html)     ---------- */
+.pre-cart {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cartContainer {
+    display: none;
+    background-color: lightslategrey;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.cartItemCard .card-body {
+    padding: 0.5rem;
+}
+
+.cartItemCard .card-header {
+    padding: 0.5rem 0.75rem;
+}
+
+.cartItemCard p {
+    font-size: 0.80rem;
+}
+
+#cartItemCardsContainer > .col-12 {
+    padding: 0;
+}
+
+.commerce {
+    margin-top: 8px;
+}
+
+.commerce .btn {
+    font-size: 0.75rem;
+}
+/* ----------      Marketplace (marketplace.html)     ---------- */
+/* -----------------------------END----------------------------- */
