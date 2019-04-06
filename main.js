@@ -287,16 +287,27 @@ const checkoutStringBuilder = () => {
 
 const checkout = () => {
     if (cartArray.length !== 0) {
-        alert(checkoutStringBuilder());
+        printToDom('checkout-modal-content', checkoutStringBuilder());
+        modalEvents('checkout-modal');
         cartArray.splice(0, cartArray.length);
         document.getElementById('cartItemCardsContainer').innerHTML = '';
         updateTotal();
     } else if (cartArray.length === 0) {
-        alert(`You can't checkout with an empty cart, silly!`);
+        modalEvents('checkout-modal');
+        printToDom('checkout-modal-content', `You can't checkout with an empty cart, silly!`);
     }
+
 };
 // ----------      Marketplace (marketplace.html)     ----------
 // -----------------------------END-----------------------------
+
+// ----------------------------START----------------------------
+// -------------------------Modal Events------------------------
+
+const modalEvents = (divId) => {
+    const targetModal = document.getElementById(divId);
+    $(targetModal).modal("show");
+}
 
 
 // ----------------------------START----------------------------
@@ -311,16 +322,19 @@ tourForm = () => {
 
 const confirmation = () => {
     let domString = '';
-
+    domString += `<h5>Thank you for booking your tour!</h5>`;
     const inputValues = document.getElementsByClassName("form-control");
     for (i = 0; i < inputValues.length; i++) {
 
-        domString += `${inputValues[i].value}\n`;
+        domString += `</p>${inputValues[i].value}</p>`;
 
     }
 
+    
+    modalEvents('form-modal');
 
-    alert("You have made the following reservation " + domString);
+    printToDom('form-modal-content', domString);
+
 };
 if (document.getElementById("booked") !== null) {
     document.getElementById("booked").addEventListener("click", confirmation);
@@ -495,3 +509,4 @@ const init = () => {
 init();
 // ----------           Multi-Page / Shared           ----------
 // -----------------------------END-----------------------------
+
