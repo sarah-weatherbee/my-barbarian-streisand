@@ -158,15 +158,44 @@ footer h5 {
 #intro {
     background-color: white;
     box-shadow: var(--container-shadow);
+    justify-content: flex-start;
+    margin-bottom: 25px;
+    vertical-align: center;
+    align-items: center;
+      
 }
 
 .tour-info {
-    margin: 15px;
+    margin: 15px;   
 }
 
+ #book-tour-button {
+    margin-top: 5px;
+    margin-bottom: 8px;
+} 
+
+.tourImg1 img {
+    max-width: 100%;
+    height: auto; 
+    margin-top: 6px;
+} 
+
 #tour-form {
-    display: none;
+    display: none; 
+    background-color: whitesmoke;
+    box-shadow: var(--container-shadow);
+    margin-bottom: 25px;
+    vertical-align: center;
+    align-items: center;
 }
+
+
+
+#booked {
+    margin-bottom: 8px;
+}
+
+
 /* ----------       Book A Tour (bookATour.html)      ---------- */
 /* -----------------------------END----------------------------- */
 
@@ -251,3 +280,11 @@ footer h5 {
 
 /* ----------     Beers we Brew (beersWeBrew.html)    ---------- */
 /* -----------------------------END----------------------------- */
+
+
+
+
+
+
+
+

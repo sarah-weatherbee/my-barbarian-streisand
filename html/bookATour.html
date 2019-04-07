@@ -18,7 +18,9 @@
     <div id="navDiv"></div>
     <div id="pageContainer" class="col-12 col-md-10 offset-md-1">
     <h1>Book a Tour</h1>
-    <div id="intro">
+    <div class= "container d-flex tourCard1>" id="intro">
+       
+      <div class="col-7 tourText1 text-left justify-content-start">
         <p class="lead tour-info"> Are you ready to get all Barbed up? Then come visit our brewery down on Barb's farm!
             We're located at 666 Barbarian Streisand Ln., Flint, MI., 66666.
             We've got the treats. We've got ALL the beer samples you need. Tours available 24/7, 365.
@@ -27,10 +29,18 @@
             But that's gonna cost ya ;-)
             Tours generally last an hour but if you need more time (and more beer), that's fine with us.
         </p>
+        <a class="btn btn-info btn-lg" id="book-tour-button" href="#" role="button">Book Now!</a>
+      </div>
+    
+    
+      <div class="col-5 tourImg1 justify-content-end">
         <img src="https://www.euronuclear.org/e-news/images/springfield-npp.jpg">
-        <a class="btn btn-primary btn-lg" id="book-tour-button" href="#" role="button">Book Now!</a>
+      </div>
     </div>
-    <div id="tour-form" class="hidden">
+    
+      
+    <div class= "container d-flex align-items-center flex-column tourCard2>" id="book-form">
+    <div id="tour-form" class="col-8 hidden">
             <form>
                     <div class="form-group">
                       <label for="exampleInputName1">Name</label>
@@ -52,9 +62,12 @@
                             <label for="exampleInputTime1">Phone number</label>
                             <input type="text" class="form-control" id="exampleInputPhone1" placeholder="Phone number">
                         </div>
-                    <button type="submit" class="btn btn-primary" id="booked">Submit</button>
+                    <button type="submit" class="btn btn-info" id="booked">Submit</button>
             </form>
+    
     </div>
+    </div>
+  </div>
 
     <div class="modal" tabindex="-1" role="dialog" id="form-modal">
         <div class="modal-dialog" role="document">
