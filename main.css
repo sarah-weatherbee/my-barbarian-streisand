@@ -33,7 +33,7 @@ body {
 }
 
 h1 { 
-    margin: auto;
+    margin: 10px auto 15px auto;
     text-align: center; 
 }
 
@@ -209,7 +209,14 @@ footer h5 {
 
 #cartContainer {
     display: none;
-    background-color: lightslategrey;
+    background-color: var(--blue);
+    border-radius: 0.25rem;
+    box-shadow: var(--container-shadow);
+    margin-bottom: 15px;
+}
+
+#cartContainer h2 {
+    margin: 10px 0;
 }
 
 .row {
@@ -232,18 +239,70 @@ footer h5 {
 #cartItemCardsContainer > .col-12 {
     padding: 0;
 }
-
+    
 .commerce {
     margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardCol .commerce {
+    padding: 0px 1.25rem 1.25rem 1.25rem;
+}
+
+.commerce h5, .commerce h4 {
+    margin: 0;
+    align-self: center;
 }
 
 .commerce .btn {
     font-size: 0.75rem;
 }
 
+.commerce h4 {
+    font-size: 1.375rem;
+}
+
 .padding-left-0 {
     padding-left: 0;
 }
+
+.merchImgContainer {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.merchImage {
+    max-height: 200px;
+    height: auto;
+    max-width: 90%;
+    width: auto;
+}
+
+.cardCol {
+    display: flex;
+}
+
+.cartItemCard .card-body .col-5 {
+    padding: 0 0.5rem;
+    text-align: center;
+}
+
+.cartItemCard .card-body .col-7 {
+    padding: 0 0.5rem;
+}
+
+.cartItemImage {
+    max-height: 100px;
+    height: auto;
+    max-width: 100%;
+    width: auto;
+}
+
+#merchCards .card-body {
+    padding: 1.25rem 1.25rem 0 1.25rem;
+}
+
 /* ----------      Marketplace (marketplace.html)     ---------- */
 /* -----------------------------END----------------------------- */
 
