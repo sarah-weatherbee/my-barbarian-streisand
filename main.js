@@ -68,7 +68,7 @@ const arrayOfMerch = [
         imageUrl: "../barb-photos/t-shirt.jpg",
         availability: "Available",
         description: "A fine t-shirt in size extra large with the glowing mug of the Barb, herself. Please note, this t-shirt is slightly used.",
-        price: 4,
+        price: 20,
     },
     {
         id: "1",
@@ -76,7 +76,7 @@ const arrayOfMerch = [
         imageUrl: "../barb-photos/night-light.jpg",
         availability: "Available",
         description: "Are you afraid of the dark? Not anymore! The monsters in your closet don't stand a chance against Barb's warm glow.",
-        price: 4,
+        price: 15,
     },
     {
         id: "2",
@@ -84,7 +84,7 @@ const arrayOfMerch = [
         imageUrl: "../barb-photos/beer-glass.jpeg",
         availability: "Available",
         description: "When you're desperate, you could drink beer out of anything. But darling, desperate doesn't look good on you. So drink from this glass.",
-        price: 4,
+        price: 12,
     },
     {
         id: "3",
@@ -92,7 +92,7 @@ const arrayOfMerch = [
         imageUrl: "../barb-photos/fur-coat.jpg",
         availability: "Available",
         description: "While we're on the subject of drinking, wouldn't you want to drink in luxury? Wrapped in excess? Have a fur coat. Have a debauched time.",
-        price: 4,
+        price: 400,
     },
     {
         id: "4",
@@ -100,7 +100,7 @@ const arrayOfMerch = [
         imageUrl: "../barb-photos/hat.jpg",
         availability: "Sold Out",
         description: "Barb's trucker fans wouldn't leave home without it. Neither should you. Hat fits most medium-sized heads.",
-        price: 4,
+        price: 25,
     },
 
     {
@@ -109,7 +109,7 @@ const arrayOfMerch = [
         imageUrl: "../barb-photos/candle.jpg",
         availability: "Available",
         description: "Pray to the one who matters. Pray to the one who gave you great beer. Matches not included",
-        price: 4,
+        price: 10,
     },
 ];
 const cartArray = [];
@@ -122,8 +122,8 @@ const cardBuilder = () => {
         arrayOfBeer.forEach((card) => {
             domString += `<div class="col-12 col-md-6 col-lg-4">`;
             domString += `  <div class="card">`;
-            domString += `    <div class="card-header"> ${card.name}`;   
-            domString += `    </div>`;    
+            domString += `    <div class="card-header"> ${card.name}`;
+            domString += `    </div>`;
             domString += `    <div class="beerImgContainer">`;
             domString += `      <img src=${card.imageUrl} class="beerImage" alt= "Picture of ${card.name}">`;
             domString += `    </div>`;
@@ -143,7 +143,7 @@ const cardBuilder = () => {
             domString += `    </div>`;
             domString += `  </div>`;
             domString += `</div>`;
-         });
+        });
         domString += `</div>`;
         printToDom('beerCards', domString);
 
@@ -152,11 +152,13 @@ const cardBuilder = () => {
     else if (document.getElementById('merchCards') !== null) {
         domString += `<div class="row">`;
         arrayOfMerch.forEach((card) => {
-            domString += `<div class="col-12 col-md-6 col-lg-4">`;
+            domString += `<div class="col-12 col-md-6 col-lg-4 cardCol">`;
             domString += `  <div class="card">`;
             domString += `    <div class="card-header"> ${card.name}`;
             domString += `    </div>`;
-            domString += `    <img src=${card.imageUrl} class="card-img-top" alt= "...">`;
+            domString += `    <div class="merchImgContainer">`;
+            domString += `      <img src=${card.imageUrl} class="merchImage" alt= "Picture of ${card.name}">`;
+            domString += `    </div>`;
             domString += `    <div class="card-body">`;
             domString += `      <div class= "availability">`;
             domString += `        <ul class="list-group list-group-flush">`;
@@ -165,11 +167,15 @@ const cardBuilder = () => {
             domString += `        </ul>`;
             domString += `      </div>`;
             domString += `      <p class="card-text">${card.description}</p>`
+            domString += `    </div>`;
             domString += `      <div class="commerce">`;
             domString += `          <h4 class="float-left">$${card.price}</h4>`;
-            domString += `          <button type="button" class="btn btn-primary float-right addToCart" id="${card.id}">Add to Cart</button>`;
+            if (card.availability === 'Sold Out') {
+                domString += `      <button type="button" class="btn btn-outline-secondary float-right addToCart" id="${card.id}" disabled>Add to Cart</button>`;
+            } else if (card.availability !== 'Sold Out') {
+                domString += `      <button type="button" class="btn btn-primary float-right addToCart" id="${card.id}">Add to Cart</button>`;
+            }
             domString += `      </div>`;
-            domString += `    </div>`;
             domString += `  </div>`;
             domString += `</div>`;
         });
@@ -240,7 +246,7 @@ const cartItemCardBuilder = () => {
         domString += `    <div class="card-body">`;
         domString += `      <div class="row">`;
         domString += `      <div class="col-5">`;
-        domString += `        <img src=${item.imageUrl} class="card-img-top" alt= "...">`;
+        domString += `      <img src=${item.imageUrl} class="cartItemImage" alt= "Picture of ${item.name}">`;
         domString += `      </div>`;
         domString += `      <div class="col-7">`;
         domString += `        <p class="card-text">${item.description}</p>`
@@ -280,9 +286,13 @@ const calculateTotal = () => {
 
 const checkoutStringBuilder = () => {
     let checkoutString = '';
-    checkoutString += `Thank you for your order!\n`;
-    checkoutString += `You purchased ${cartArray.length} items for $${calculateTotal()}.00.\n`;
-    checkoutString += `The order has been processed with your information on file.\n`;
+    checkoutString += `<p>Thank you for your order!</p>`;
+    if (cartArray.length === 1) {
+        checkoutString += `<p>You purchased ${cartArray.length} item for $${calculateTotal()}.00.</p>`;
+    } else if (cartArray.length !== 1) {
+        checkoutString += `<p>You purchased ${cartArray.length} items for $${calculateTotal()}.00.</p>`;
+    }
+    checkoutString += `<p>The order has been processed with your information on file.</p>`;
     return checkoutString;
 };
 
@@ -330,7 +340,7 @@ const confirmation = () => {
         domString += `</p>${inputValues[i].value}</p>`;
 
     }
-    
+
     modalEvents('form-modal', 'form-modal-content', domString);
 
 
@@ -449,9 +459,9 @@ const navAndFooter = () => {
             </div>
             <div class="col-4">
                 <h5>Barbarian Streisand Brewery</h5>
-                <p>(615) 123-4567</p>
+                <p>(810) 123-4567</p>
                 <p><a href="#">contact@barbarianStreisand.com</a></p>
-                <p>1234 Street St. Nashville, TN 37209</p>
+                <p>666 Barbarian Streisand Ln. Flint, MI 66666</p>
                 <div class="row" id="socials">
                     <div class="col text-center">
                         <a href="#"><i class="fab fa-facebook-square"></i></a>
